@@ -16,8 +16,10 @@
     "lucide-react": "^0.477.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^7.2.0",
-    "react-toastify": "^11.0.5"
+    "react-toastify": "^11.0.5",
+    "reactjs-popup": "^2.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
