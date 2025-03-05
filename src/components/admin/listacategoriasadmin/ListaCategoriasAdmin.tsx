@@ -41,10 +41,10 @@ function ListaCategoriasAdmin() {
 
   return (
     <>
-      <div className="flex h-screen=">
+      <div className="flex h-screen overflow-hidden">
         < Sidebar />
 
-        <div className="container mx-auto px-4 py-6 flex-1 p-6">
+        <div className="container mx-auto px-4 py-6 flex-1 p-6 overflow-y-auto">
           <h1 className="text-4xl font-bold mb-6 ml-4">Categorias</h1>
           <Link to="/admin/cadastrarcategoria">
             <button className="mt-6 bg-teal-500 text-white py-2 px-4 rounded-full hover:bg-teal-600 ml-4 mb-3">
@@ -61,7 +61,7 @@ function ListaCategoriasAdmin() {
               wrapperClass="dna-wrapper mx-auto"
             />
           )}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {categorias.map((categoria) => (
               <CardCategoriasAdmin key={categoria.id} categoria={categoria} hasOptions={true} />
             ))}

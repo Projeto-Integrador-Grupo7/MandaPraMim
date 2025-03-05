@@ -97,21 +97,14 @@ function CadastrarCategoriaAdmin() {
     retornar()
   }
 
+
+
   return (
     <>
       <div className="flex h-screen">
         < Sidebar />
         <div className="p-6 bg-white rounded-lg max-w-md mx-auto w-full">
-          <h1 className="text-2xl font-bold mb-4 text-center">Adicionar Categoria</h1>
-
-          <div className="flex flex-col mb-4">
-            <label className="mb-2">Faça upload da imagem</label>
-            <div
-              className="border-dashed border-2 border-gray-300 rounded-lg h-32 flex items-center justify-center cursor-pointer"
-            >
-              <span>📷</span>
-            </div>
-          </div>
+          <h1 className="text-2xl font-bold mb-4 text-center mt-15">Adicionar Categoria</h1>
 
           <div className="flex flex-col mb-4">
             <label htmlFor="nome" className="mb-2">Título</label>
@@ -133,6 +126,18 @@ function CadastrarCategoriaAdmin() {
               name="descricao"
               placeholder="adicione uma descrição"
               value={categoria.descricao}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+
+          <div className="flex flex-col mb-4">
+            <label htmlFor="foto" className="mb-2">Link da Imagem</label>
+            <input
+              type="text"
+              className="border border-gray-300 rounded-lg p-2"
+              name="foto"
+              placeholder="adicione um link"
+              value={categoria.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>

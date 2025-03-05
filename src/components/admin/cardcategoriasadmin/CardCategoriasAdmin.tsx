@@ -33,11 +33,23 @@ function CardCategoriasAdmin({ categoria, hasOptions, onEdit, onDelete }: CardCa
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <div className="relative bg-white border rounded-lg shadow-lg p-4 flex items-center justify-between hover:shadow-xl transition-shadow duration-300 min-w-[300px] min-h-[200px]">
-        <span className="font-bold text-lg text-center">{categoria.nome}</span>
+      <div className="relative border rounded-lg shadow-lg flex items-center justify-between hover:shadow-xl transition-shadow duration-300 max-w-full">
+        <img
+          className="w-full h-full object-cover opacity-400"
+          src={categoria.foto}
+          alt="Comidas Saudáveis"
+        />
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+
+        <div className="absolute inset-0 flex items-end justify-center pb-3">
+          <h2 className="text-white text-xl font-bold">
+            {categoria.nome}
+          </h2>
+        </div>
+
         {hasOptions && (
-          <div className="relative">
-            <button onClick={() => toggleOptions(0)} className="text-gray-600 focus:outline-none">
+          <div className="absolute top-3 right-3">
+            <button onClick={() => toggleOptions(0)} className="text-white focus:outline-none">
               <FiMoreHorizontal size={20} />
             </button>
             {openOptions === 0 && (
@@ -57,7 +69,7 @@ function CardCategoriasAdmin({ categoria, hasOptions, onEdit, onDelete }: CardCa
           </div>
         )}
       </div>
-    </div >
+    </div>
   );
 };
 

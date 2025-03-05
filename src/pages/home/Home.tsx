@@ -1,4 +1,5 @@
 import VideoBg from '../../assets/videos/bg_video.mp4';
+import ListaCategorias from '../../components/categorias/listacategorias/ListaCategorias';
 
 function Home() {
     return (
@@ -6,10 +7,10 @@ function Home() {
             {/* Banner Principal */}
             <div className="relative w-full h-screen">
                 {/* Vídeo de fundo */}
-                <video 
-                    className="absolute top-0 left-0 w-full h-full object-cover" 
-                    autoPlay 
-                    loop 
+                <video
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    autoPlay
+                    loop
                     muted
                     playsInline
                 >
@@ -37,6 +38,7 @@ function Home() {
                         />
                     </div>
                 </div>
+                < ListaCategorias />
             </div>
         </>
     );

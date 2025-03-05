@@ -15,6 +15,8 @@ import CadastrarCategoriaAdmin from './components/admin/cadastrarcategoriaadmin/
 import EditarCategoriaAdmin from './components/admin/editarcategoriaadmin/EditarCategoriaAdmin'
 import DeletarCategoriaAdmin from './components/admin/deletarcategoriaadmin/DeletarCategoriaAdmin'
 import Header from './components/admin/header/Header'
+import ListaCategorias from './components/categorias/listacategorias/ListaCategorias'
+import ListaCategoriasLoja from './components/categorias/listacategorias/ListaCategoriasLoja'
 
 function AppContent() {
   const location = useLocation();
@@ -31,6 +33,8 @@ function AppContent() {
           <Route path="/home" element={<Home />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<ListaCategorias />} />
+          <Route path="/loja" element={<ListaCategoriasLoja />} />
           <Route path="/listaprodutos" element={<ListaProdutos />} />
           <Route path="/cadastrarproduto" element={<FormProduto />} />
           <Route path="/editarproduto/:id" element={<FormProduto />} />
