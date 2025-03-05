@@ -1,10 +1,13 @@
+import { Link, useNavigate } from "react-router-dom";
 import {  useContext, ReactNode } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import logo from "../../assets/img/homeimg/logo.png";
+import ButtonShop from "../cart/cartbuttomshop/CartButtomShop";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
 
+    
     const navigate = useNavigate();
 
     const { usuario, handleLogout } = useContext(AuthContext);
@@ -30,53 +33,57 @@ function Navbar() {
     }else{
         component =(
             <>
-        <Link to='/Login' onClick={logout} className='hover:underline'>Login</Link>
+             <Link to="/login">
+                    <button className="bg-black hover:bg-gray-400 text-white mt-2 px-8 py-3 rounded-full text-lg font-semibold">
+                        Login
+                    </button>
+                </Link>
 
-        <Link to='/cadastro' className="hover:underline"> Cadastrar</Link>
+        <Link to='/cadastro' className="hover:underline"> 
+        <button className="bg-black hover:bg-gray-400 text-white mt-2 px-8 py-3 rounded-full text-lg font-semibold">
+                        Cadastrar
+                    </button>
+        </Link>
         </>
         )
     }
 
-    
+
+
+
     return (
-        <>
-    
-            <div className='w-full flex justify-center py-0
-            bg-gradient-to-r from-[#ea5804] via-[#ea5804] to-[#dd720d] text-rosa-neon'>
-                {/* justify-between = posiciona os itens na horizontal e os distribui uniformemente */}
-                {/* /* text-lg = define o tamanho da fonte e da linha  */}
-                <div className="container flex justify-between text-lg font-grotesk py-5 px-3">
+        <nav className="w-full bg-[#E65100] min-h-[60px] py-4 flex items-center justify-between px-10">
+            {/* Logo + Menu de navegação */}
+            <div className="flex items-center gap-6">
+                <Link to="/home">
+                    <img src={logo} alt="Logo" className="h-auto w-32" />
+                </Link>
 
-                    {/* Link = atribui a rota criada no App.tsx */}
-                    <img 
-                        src='https://ik.imagekit.io/pphc/logo.png?updatedAt=1741022260506'
-                        alt = 'Logo'
-                        className="w-1/18 my-0 mx-0"
-                     />
+                {/* Menu de navegação */}
+                <div className="hidden md:flex gap-6 text-lg font-semibold text-black">
+                    <Link to="/home" className="hover:underline">Início</Link>
+                    <Link to="/loja" className="hover:underline">Loja</Link>
+                    <Link to="/admin" className="hover:underline">Adm</Link>
+                    <Link to="/perfil" className="hover:underline">Perfil</Link>
+                    <Link to="/sobre" className="hover:underline">Sobre</Link>
 
-                    <Link to='/home' className="text-2xl font-bold"> "logo" </Link>
-
-                    {/* gap-4 = define o tamanho das lacunas entre os elementos */}
-                    <div className='flex gap-6 text-indigo-950 font-semibold text-xl'>
-                        {/* O 'Link to=' atribui a rota definida no App.tsx */}
-                        <Link to='/postagens' className='hover:underline'>Inicio</Link>
-
-                        <Link to='/temas' className="hover:underline"> Loja </Link>
-                        
-                        <Link to='/perfil' className='hover:underline'>Perfil</Link>
-
-                        <Link to='/sobre' className='hover:underline'>Sobre</Link>
-
-
-
-                         {component}
-
-                    </div>
+                   
                 </div>
             </div>
-        </>
-    )
+
+            {/* Ícone da sacola + Botão de login */}
+            <div className="flex items-center gap-8">
+                {/* Botão do Carrinho */}
+                <div className="mt-0">
+                    <ButtonShop />
+                </div>
+
+                {component}
+                {/* Botão de login */}
+          
+            </div>
+        </nav>
+    );
 }
 
-export default Navbar
-
+export default Navbar;

@@ -171,7 +171,7 @@ function Cadastro() {
           </div>
         </form>
 
-        <div className="fundoCadastro hidden lg:block"></div>
+        <div className="fundoCadastro hidden lg:block "></div>
       </div>
     </>
   )
