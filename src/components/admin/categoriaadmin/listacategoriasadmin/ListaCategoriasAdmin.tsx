@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import CardCategoriasAdmin from "../cardcategoriasadmin/CardCategoriasAdmin"
 import Sidebar from "../../sidebar/Sidebar"
 import { useContext, useEffect, useState } from "react";
-import Categoria from "../../../../models/Categoria";
-import { AuthContext } from "../../../../contexts/AuthContext";
+import Categoria from "../../../models/Categoria";
+import { AuthContext } from "../../../../contexts/authContext";
 import { buscar } from "../../../../services/Service";
 import { DNA } from "react-loader-spinner";
 
@@ -63,7 +63,12 @@ function ListaCategoriasAdmin() {
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {categorias.map((categoria) => (
-              <CardCategoriasAdmin key={categoria.id} categoria={categoria} hasOptions={true} />
+              <CardCategoriasAdmin
+                key={categoria.id}
+                categoria={categoria}
+                token={usuario.token}
+                atualizarCategorias={buscarCategorias}
+              />
             ))}
           </div>
         </div>
