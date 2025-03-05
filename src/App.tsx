@@ -7,14 +7,17 @@ import './App.css'
 import ListaProdutos from './components/produtos/listaprodutos/ListaProdutos'
 import Login from './pages/login/Login'
 import Cadastro from './pages/cadastro/Cadastro'
-import FormProduto from './components/produtos/formproduto/FormProduto'
-import DeletarProduto from './components/produtos/deletarproduto/DeletarProduto'
+
 import AdminLayout from './pages/adminlayout/AdminLayout'
-import ListaCategoriasAdmin from './components/admin/listacategoriasadmin/ListaCategoriasAdmin'
-import CadastrarCategoriaAdmin from './components/admin/cadastrarcategoriaadmin/CadastrarCategoriaAdmin'
-import EditarCategoriaAdmin from './components/admin/editarcategoriaadmin/EditarCategoriaAdmin'
-import DeletarCategoriaAdmin from './components/admin/deletarcategoriaadmin/DeletarCategoriaAdmin'
+import ListaCategoriasAdmin from './components/admin/categoriaadmin/listacategoriasadmin/ListaCategoriasAdmin'
+import CadastrarCategoriaAdmin from './components/admin/categoriaadmin/cadastrarcategoriaadmin/CadastrarCategoriaAdmin'
+import EditarCategoriaAdmin from './components/admin/categoriaadmin/editarcategoriaadmin/EditarCategoriaAdmin'
+import DeletarCategoriaAdmin from './components/admin/categoriaadmin/deletarcategoriaadmin/DeletarCategoriaAdmin'
 import Header from './components/admin/header/Header'
+import { Provider } from './contexts/CartContext'
+import FormProduto from './components/admin/produtoadmin/formprodutoadmin/FormProduto'
+import DeletarProduto from './components/admin/produtoadmin/deletarprodutoadmin/DeletarProduto'
+import ListaProdutosAdmin from './components/admin/produtoadmin/listaprodutosadmin/ListaProdutosAdmin'
 
 function AppContent() {
   const location = useLocation();
@@ -32,14 +35,15 @@ function AppContent() {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/listaprodutos" element={<ListaProdutos />} />
-          <Route path="/cadastrarproduto" element={<FormProduto />} />
-          <Route path="/editarproduto/:id" element={<FormProduto />} />
-          <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
           <Route path="/admin" element={<AdminLayout />} />
           <Route path="/admin/categorias" element={<ListaCategoriasAdmin />} />
           <Route path="/admin/cadastrarcategoria" element={<CadastrarCategoriaAdmin />} />
           <Route path="/admin/editarcategoria/:id" element={<EditarCategoriaAdmin />} />
           <Route path="/admin/deletarcategoria/:id" element={<DeletarCategoriaAdmin />} />
+          <Route path="/admin/produtos" element={<ListaProdutosAdmin />} />
+          <Route path="/admin/cadastrarproduto" element={<FormProduto />} />
+          <Route path="/admin/editarproduto/:id" element={<FormProduto />} />
+          <Route path="/admin/deletarproduto/:id" element={<DeletarProduto />} />
         </Routes>
       </div>
       {!isAdminRoute && <Footer />}
@@ -50,9 +54,11 @@ function AppContent() {
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <AppContent />
-      </BrowserRouter>
+      <Provider>
+        <BrowserRouter>
+          <AppContent />
+        </BrowserRouter>
+      </Provider>
     </AuthProvider>
   );
 }

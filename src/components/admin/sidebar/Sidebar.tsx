@@ -10,10 +10,10 @@ function Sidebar() {
             <ShoppingCart className="w-5 h-5 ml-2" />
             <span className="ml-2">Pedidos</span>
           </Link>
-          <a className="flex items-center text-gray-700 p-2 hover:bg-gray-200" href="#">
+          <Link to="/admin/produtos" className="flex items-center text-gray-700 p-2 hover:bg-gray-200">
             <Tag className="w-5 h-5 ml-2" />
             <span className="ml-2">Produtos</span>
-          </a>
+          </ Link>
           <Link to="/admin/categorias" className="flex items-center text-gray-700 p-2 hover:bg-gray-200">
             <LayoutGrid className="w-5 h-5 ml-2" />
             <span className="ml-2">Categorias</span>

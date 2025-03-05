@@ -1,10 +1,10 @@
 import { useState, useContext, useEffect, ChangeEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { AuthContext } from "../../../contexts/AuthContext";
-import Categoria from "../../../models/Categoria";
-import { buscar, atualizar, cadastrar } from "../../../services/Service";
+import { AuthContext } from "../../../../contexts/AuthContext";
+import Categoria from "../../../../models/Categoria";
+import { buscar, atualizar, cadastrar } from "../../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
-import Produto from "../../../models/Produto";
+import Produto from "../../../../models/Produto";
 
 function FormProduto() {
 
@@ -13,7 +13,7 @@ function FormProduto() {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
-    const [categoria, setCategoria] = useState<Categoria>({ id: 0, nome: '', descricao: '', })
+    const [categoria, setCategoria] = useState<Categoria>({ id: 0, nome: '', descricao: '', foto: "" })
     const [produto, setProduto] = useState<Produto>({}as Produto)
 
     const { id } = useParams<{ id: string }>()
@@ -195,18 +195,6 @@ function FormProduto() {
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
-                {/* <div className="flex flex-col gap-2">
-                    <label htmlFor="nome">Saudável</label>
-                    <input
-                        type="text"
-                        placeholder="Nome"
-                        name="saudavel"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={produto.saudavel}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div> */}
                 <div className="flex flex-col gap-2">
                     <label htmlFor="">Saudável?</label>
                     <div className="flex gap-4">
@@ -234,6 +222,20 @@ function FormProduto() {
                         </label>
                     </div>
                 </div>
+
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="foto">Foto</label>
+                    <input
+                        type="text"
+                        placeholder="Foto"
+                        name="foto"
+                        required
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={produto.foto}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
+                
                 <div className="flex flex-col gap-2">
                     <p>Categoria do Produto</p>
                     <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded'
