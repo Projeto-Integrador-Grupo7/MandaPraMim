@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import CardCategoriasAdmin from "../cardcategoriasadmin/CardCategoriasAdmin"
-import Sidebar from "../sidebar/Sidebar"
+import Sidebar from "../../sidebar/Sidebar"
 import { useContext, useEffect, useState } from "react";
-import Categoria from "../../../models/Categoria";
-import { AuthContext } from "../../../contexts/AuthContext";
-import { buscar } from "../../../services/Service";
+import Categoria from "../../../../models/Categoria";
+import { AuthContext } from "../../../../contexts/AuthContext";
+import { buscar } from "../../../../services/Service";
 import { DNA } from "react-loader-spinner";
 
 function ListaCategoriasAdmin() {

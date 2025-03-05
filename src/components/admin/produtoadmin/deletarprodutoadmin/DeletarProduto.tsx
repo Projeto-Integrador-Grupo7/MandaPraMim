@@ -1,8 +1,8 @@
 import { useState, useContext, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { AuthContext } from "../../../contexts/AuthContext"
-import Produto from "../../../models/Produto"
-import { buscar, deletar } from "../../../services/Service"
+import { AuthContext } from "../../../../contexts/AuthContext"
+import Produto from "../../../../models/Produto"
+import { buscar, deletar } from "../../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 
 function DeletarProduto() {
@@ -69,7 +69,7 @@ function DeletarProduto() {
     }
 
     function retornar() {
-        navigate("/produtos")
+        navigate("/admin/produtos")
     }
     
     return (

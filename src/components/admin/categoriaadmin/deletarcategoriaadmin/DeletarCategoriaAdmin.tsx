@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Categoria from '../../../models/Categoria';
-import { AuthContext } from '../../../contexts/AuthContext';
-import { buscar, deletar } from '../../../services/Service';
+import Categoria from '../../../../models/Categoria';
+import { AuthContext } from '../../../../contexts/AuthContext';
+import { buscar, deletar } from '../../../../services/Service';
 import { RotatingLines } from 'react-loader-spinner';
-import Sidebar from '../sidebar/Sidebar';
+import Sidebar from '../../sidebar/Sidebar';
 
 const DeletarCategoriaAdmin: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,7 +34,7 @@ const DeletarCategoriaAdmin: React.FC = () => {
 
   async function buscarPorId(id: string) {
     try {
-      await buscar(`/categorias/${id}`, seCategoria, {
+      await buscar(`/categorias/${id}`, setCategoria, {
         headers: {
           'Authorization': token
         }

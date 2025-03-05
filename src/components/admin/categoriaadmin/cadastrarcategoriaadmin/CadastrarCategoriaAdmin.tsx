@@ -1,9 +1,9 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
-import Sidebar from "../sidebar/Sidebar";
-import Categoria from "../../../models/Categoria";
-import { AuthContext } from "../../../contexts/AuthContext";
+import Sidebar from "../../sidebar/Sidebar";
+import Categoria from "../../../../models/Categoria";
+import { AuthContext } from "../../../../contexts/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
-import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { atualizar, buscar, cadastrar } from "../../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 
 function CadastrarCategoriaAdmin() {

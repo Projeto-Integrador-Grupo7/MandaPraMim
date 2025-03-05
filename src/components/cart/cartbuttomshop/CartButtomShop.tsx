@@ -1,36 +1,36 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ShoppingBag } from "lucide-react";
 import CartModal from "../cartmodal/CartModal";
-import  Produto  from "../../models/Produto"; // Importando sua model
+import { Context } from "../../../contexts/CartContext"; // Importando o contexto do carrinho
 
 export default function ButtonShop() {
-    const [cart, setCart] = useState<Produto[]>([]);
-    const [isCartOpen, setIsCartOpen] = useState(false);
-
-    const addToCart = (produto: Produto) => {
-        setCart([...cart, produto]);
-    };
-
-    const removeFromCart = (id: number) => {
-        setCart(cart.filter((product) => product.id !== id));
-    };
+    const { items, removerProduto } = useContext(Context); // Consumindo o contexto para obter os itens do carrinho
+    const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar a abertura do modal
 
     return (
         <>
-        <button
-            className="mt-4 hover:bg-gray-400 text-white px-6 py-2 rounded-lg flex items-center "
-            onClick={() => setIsCartOpen(true)}
-        >
-            <ShoppingBag  className="mx-2 w-12 h-12"/>
-            Sacola
-        </button>
+            {/* Ícone da sacola */}
+            <button
+                className="mt-4 hover:bg-gray-400 text-white px-6 py-2 rounded-lg flex items-center relative"
+                onClick={() => setIsCartOpen(true)} // Abre o modal do carrinho
+            >
+                <ShoppingBag className="mx-2 w-12 h-12" />
+                Sacola
+                {/* Exibe o número de itens no carrinho */}
+                {items.length > 0 && (
+                    <span className="bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center absolute -top-1 -right-1">
+                        {items.length}
+                    </span>
+                )}
+            </button>
 
-        <CartModal
-            isOpen={isCartOpen}
-            onClose={() => setIsCartOpen(false)}
-            cart={cart}
-            removeFromCart={removeFromCart}
-        />
+            {/* Modal do Carrinho */}
+            <CartModal
+                isOpen={isCartOpen}
+                onClose={() => setIsCartOpen(false)} // Fecha o modal
+                cart={items} // Passa os itens do carrinho para o modal
+                removeFromCart={removerProduto} // Passa a função para remover itens do carrinho
+            />
         </>
     );
-    }
+}

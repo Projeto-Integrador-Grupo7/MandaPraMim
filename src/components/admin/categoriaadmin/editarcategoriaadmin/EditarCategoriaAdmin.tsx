@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { Camera, Image } from 'lucide-react';
-import Sidebar from '../sidebar/Sidebar';
+import Sidebar from '../../sidebar/Sidebar';
 import { useNavigate, useParams } from 'react-router-dom';
-import Categoria from '../../../models/Categoria';
-import { AuthContext } from '../../../contexts/AuthContext';
-import { atualizar, buscar, cadastrar } from '../../../services/Service';
+import Categoria from '../../../../models/Categoria';
+import { AuthContext } from '../../../../contexts/AuthContext';
+import { atualizar, buscar, cadastrar } from '../../../../services/Service';
 import { RotatingLines } from 'react-loader-spinner';
 
 const EditarCategoriaAdmin: React.FC = () => {
