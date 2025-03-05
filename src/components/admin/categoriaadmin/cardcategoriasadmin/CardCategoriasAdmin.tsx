@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FiMoreHorizontal, FiEdit, FiTrash2 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import Categoria from '../../../models/Categoria';
+import Categoria from '../../../../models/Categoria';
 import { deletar } from '../../../../services/Service';
 import { RotatingLines } from 'react-loader-spinner';
 
