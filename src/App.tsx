@@ -28,26 +28,25 @@ function AppContent() {
       {!isAdminRoute && <Navbar />}
       {isAdminRoute && <Header />}
 
-      <div className="min-h-[80vh]">
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<ListaCategorias />} />
-          <Route path="/loja" element={<ListaCategoriasLoja />} />
-          <Route path="/listaprodutos" element={<ListaProdutos />} />
-          <Route path="/admin" element={<AdminLayout />} />
-          <Route path="/perfil" element={<Perfil />} />
-          <Route path="/admin/categorias" element={<ListaCategoriasAdmin />} />
-          <Route path="/admin/cadastrarcategoria" element={<FormCategoria />} />
-          <Route path="/admin/editarcategoria/:id" element={<FormCategoria />} />
-          <Route path="/admin/produtos" element={<ListaProdutosAdmin />} />
-          <Route path="/admin/cadastrarproduto" element={<FormProduto />} />
-          <Route path="/admin/editarproduto/:id" element={<FormProduto />} />
-          <Route path="/admin/deletarproduto/:id" element={<DeletarProduto />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<ListaCategorias />} />
+        <Route path="/loja" element={<ListaCategoriasLoja />} />
+        <Route path="/listaprodutos" element={<ListaProdutos />} />
+        <Route path="/admin" element={<AdminLayout />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/admin/categorias" element={<ListaCategoriasAdmin />} />
+        <Route path="/admin/cadastrarcategoria" element={<FormCategoria />} />
+        <Route path="/admin/editarcategoria/:id" element={<FormCategoria />} />
+        <Route path="/admin/produtos" element={<ListaProdutosAdmin />} />
+        <Route path="/admin/cadastrarproduto" element={<FormProduto />} />
+        <Route path="/admin/editarproduto/:id" element={<FormProduto />} />
+        <Route path="/admin/deletarproduto/:id" element={<DeletarProduto />} />
+      </Routes>
+
       {!isAdminRoute && <Footer />}
     </>
   )

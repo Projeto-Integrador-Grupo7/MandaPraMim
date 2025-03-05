@@ -32,18 +32,18 @@ function ListaCategorias() {
 
   return (
     <>
-      {categorias.length === 0 && (
-        <DNA
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
-      )}
       <div className="flex flex-col items-center min-h-screen bg-yellow-500">
         <div className="container flex flex-col mt-10 justify-center items-center">
+          {categorias.length === 0 && (
+            <DNA
+              visible={true}
+              height="200"
+              width="200"
+              ariaLabel="dna-loading"
+              wrapperStyle={{}}
+              wrapperClass="dna-wrapper mx-auto"
+            />
+          )}
           <div className="grid grid-cols-2 gap-4 grid-center">
             {categorias.map((categoria) => (
               <CardCategorias key={categoria.id} categoria={categoria} />

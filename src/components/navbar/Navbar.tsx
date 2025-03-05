@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import {  useContext, ReactNode } from "react";
+import { useContext, ReactNode } from "react";
 import logo from "../../assets/img/homeimg/logo.png";
 import ButtonShop from "../cart/cartbuttomshop/CartButtomShop";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -7,7 +7,7 @@ import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
 
-    
+
     const navigate = useNavigate();
 
     const { usuario, handleLogout } = useContext(AuthContext);
@@ -25,26 +25,26 @@ function Navbar() {
     if (usuario.token !== "") {
 
         component = (
-            <button className="py-4 px-9 rounded-4xl bg-black text-white">    
+            <button className="py-4 px-9 rounded-4xl bg-black text-white">
                 <Link to='/home' onClick={logout} className='hover:underline'>Sair</Link>
-            </button>  
+            </button>
 
         )
-    }else{
-        component =(
+    } else {
+        component = (
             <>
-             <Link to="/login">
+                <Link to="/login">
                     <button className="bg-black hover:bg-gray-400 text-white mt-2 px-8 py-3 rounded-full text-lg font-semibold">
                         Login
                     </button>
                 </Link>
 
-        <Link to='/cadastro' className="hover:underline"> 
-        <button className="bg-black hover:bg-gray-400 text-white mt-2 px-8 py-3 rounded-full text-lg font-semibold">
+                <Link to='/cadastro' className="hover:underline">
+                    <button className="bg-black hover:bg-gray-400 text-white mt-2 px-8 py-3 rounded-full text-lg font-semibold">
                         Cadastrar
                     </button>
-        </Link>
-        </>
+                </Link>
+            </>
         )
     }
 
@@ -67,7 +67,7 @@ function Navbar() {
                     <Link to="/perfil" className="hover:underline">Perfil</Link>
                     <Link to="/sobre" className="hover:underline">Sobre</Link>
 
-                   
+
                 </div>
             </div>
 
@@ -80,7 +80,7 @@ function Navbar() {
 
                 {component}
                 {/* Botão de login */}
-          
+
             </div>
         </nav>
     );

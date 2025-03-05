@@ -1,4 +1,4 @@
-import VideoBg from '../../assets/videos/bg_video.mp4';
+import VideoBg from '../../assets/videos/VideoEntregador.mp4';
 import ListaCategorias from '../../components/categorias/listacategorias/ListaCategorias';
 
 function Home() {
@@ -34,12 +34,12 @@ function Home() {
                         <input
                             type="text"
                             placeholder="Pesquisar por produtos"
-                            className="w-96 p-3 rounded-full text-black shadow-md focus:outline-none bg-white"
+                            className="w-96 p-3 rounded-full text-black shadow-md focus:outline-none bg-white text-center"
                         />
                     </div>
                 </div>
-                < ListaCategorias />
             </div>
+            < ListaCategorias />
         </>
     );
 }
