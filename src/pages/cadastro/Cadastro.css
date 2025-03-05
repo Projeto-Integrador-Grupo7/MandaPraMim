@@ -1,0 +1,9 @@
+.fundoCadastro {
+    background-image: url("https://ik.imagekit.io/pphc/delivery.png?updatedAt=1741022185906");
+    background-repeat: no-repeat;
+    width: 65%;
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3rem;
+  }

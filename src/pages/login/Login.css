@@ -1,0 +1,9 @@
+.fundoLogin {
+    background-image: url("https://ik.imagekit.io/pphc/login.png?updatedAt=1741193046256");
+    background-repeat: no-repeat;
+    min-height: 60vh;
+    width: 45%;
+    background-size: cover; 
+    background-position: center;
+    border-radius: 2rem;
+}
