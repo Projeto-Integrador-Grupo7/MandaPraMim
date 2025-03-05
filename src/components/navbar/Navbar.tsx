@@ -15,7 +15,7 @@ function Navbar() {
                 <div className="hidden md:flex gap-6 text-lg font-semibold text-black">
                     <Link to="/home" className="hover:underline">Início</Link>
                     <Link to="/loja" className="hover:underline">Loja</Link>
-                    <Link to="/perfil" className="hover:underline">Perfil</Link>
+                    <Link to="/admin" className="hover:underline">Perfil</Link>
                     <Link to="/sobre" className="hover:underline">Sobre</Link>
                 </div>
             </div>
