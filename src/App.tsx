@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
 import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
@@ -9,31 +9,53 @@ import Login from './pages/login/Login'
 import Cadastro from './pages/cadastro/Cadastro'
 import FormProduto from './components/produtos/formproduto/FormProduto'
 import DeletarProduto from './components/produtos/deletarproduto/DeletarProduto'
+import AdminLayout from './pages/adminlayout/AdminLayout'
+import ListaCategoriasAdmin from './components/admin/listacategoriasadmin/ListaCategoriasAdmin'
+import CadastrarCategoriaAdmin from './components/admin/cadastrarcategoriaadmin/CadastrarCategoriaAdmin'
+import EditarCategoriaAdmin from './components/admin/editarcategoriaadmin/EditarCategoriaAdmin'
+import DeletarCategoriaAdmin from './components/admin/deletarcategoriaadmin/DeletarCategoriaAdmin'
+import Header from './components/admin/header/Header'
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
   return (
     <>
-      <AuthProvider>
-        <BrowserRouter>
-          <Navbar />
-          <div className="min-h-[80vh]">
-            <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/cadastro" element={<Cadastro />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/listaprodutos" element={<ListaProdutos />} />
-              <Route path="/cadastrarproduto" element={<FormProduto />} />
-              <Route path="/editarproduto/:id" element={<FormProduto />} />
-              <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
-              
-            </Routes>
-          </div>
-          <Footer />
-        </BrowserRouter>
-      </AuthProvider>
+      {!isAdminRoute && <Navbar />}
+      {isAdminRoute && <Header />}
+
+      <div className="min-h-[80vh]">
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/listaprodutos" element={<ListaProdutos />} />
+          <Route path="/cadastrarproduto" element={<FormProduto />} />
+          <Route path="/editarproduto/:id" element={<FormProduto />} />
+          <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
+          <Route path="/admin" element={<AdminLayout />} />
+          <Route path="/admin/categorias" element={<ListaCategoriasAdmin />} />
+          <Route path="/admin/cadastrarcategoria" element={<CadastrarCategoriaAdmin />} />
+          <Route path="/admin/editarcategoria/:id" element={<EditarCategoriaAdmin />} />
+          <Route path="/admin/deletarcategoria/:id" element={<DeletarCategoriaAdmin />} />
+        </Routes>
+      </div>
+      {!isAdminRoute && <Footer />}
     </>
   )
 }
+
+function App() {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </AuthProvider>
+  );
+}
+
 
 export default App
