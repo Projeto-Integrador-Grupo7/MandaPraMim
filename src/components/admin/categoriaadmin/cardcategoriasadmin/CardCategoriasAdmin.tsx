@@ -34,7 +34,7 @@ function CardCategoriasAdmin({ categoria, hasOptions, onEdit, onDelete }: CardCa
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="relative border rounded-lg shadow-lg flex items-center justify-between hover:shadow-xl transition-shadow duration-300 max-w-full">
-        <img
+          <img
           className="w-full h-full object-cover opacity-400"
           src={categoria.foto}
           alt="Comidas Saudáveis"

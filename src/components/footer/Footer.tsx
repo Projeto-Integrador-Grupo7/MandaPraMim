@@ -4,7 +4,7 @@ function Footer() {
     let data = new Date().getFullYear();
 
     return (
-        <div className="w-full bg-[#E65100] text-white py-10 flex flex-col md:flex-row items-center md:items-start justify-between px-8 md:px-20">
+        <div className="w-full bg-[#E65100] text-white py-10 flex flex-col md:flex-row items-center md:items-start justify-between px-8 md:px-20 relative">
             {/* Seção Centralizada */}
             <div className="flex justify-center flex-col items-center text-center md:w-1/2 ">
                 <h2 className="text-3xl font-bold">Manda Pra mim Delivery</h2>

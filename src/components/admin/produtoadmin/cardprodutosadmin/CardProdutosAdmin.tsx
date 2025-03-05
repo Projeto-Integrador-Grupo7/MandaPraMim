@@ -23,7 +23,11 @@ function CardProdutos({ item, hasOptions }: CardProdutosProps) {
         <div className="border-slate-900 border flex flex-col rounded overflow-hidden justify-between">
             <div>
                 <div className="flex w-full bg-lime-600 py-2 px-4 items-center gap-4">
-                    {/* Imagem do produto (se necessário) */}
+                    <img 
+                        className='w-56 h-auto border-8 border-white mt-4 ml-4' 
+                        src={item.foto} 
+                        alt={'Foto do produto ${item.nome}'} 
+                    />
                 </div>
                 <div className="p-4">
                     <h4 className="text-lg font-semibold uppercase">{item.nome}</h4>

@@ -17,7 +17,7 @@ function Login() {
 
     useEffect(() => {
         if (usuario.token !== "") {
-            navigate('/cadastrarproduto')
+            navigate('/home')
         }
     }, [usuario])
 

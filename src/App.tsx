@@ -7,6 +7,7 @@ import './App.css'
 import ListaProdutos from './components/produtos/listaprodutos/ListaProdutos'
 import Login from './pages/login/Login'
 import Cadastro from './pages/cadastro/Cadastro'
+
 import AdminLayout from './pages/adminlayout/AdminLayout'
 import ListaCategoriasAdmin from './components/admin/categoriaadmin/listacategoriasadmin/ListaCategoriasAdmin'
 import CadastrarCategoriaAdmin from './components/admin/categoriaadmin/cadastrarcategoriaadmin/CadastrarCategoriaAdmin'
@@ -17,8 +18,8 @@ import { Provider } from './contexts/CartContext'
 import FormProduto from './components/admin/produtoadmin/formprodutoadmin/FormProduto'
 import DeletarProduto from './components/admin/produtoadmin/deletarprodutoadmin/DeletarProduto'
 import ListaProdutosAdmin from './components/admin/produtoadmin/listaprodutosadmin/ListaProdutosAdmin'
-import ListaCategorias from './components/categorias/listacategorias/ListaCategorias'
-import ListaCategoriasLoja from './components/categorias/listacategorias/ListaCategoriasLoja'
+import PaginaProduto from './pages/paginaproduto/PaginaProduto'
+import Loja from './pages/loja/Loja'
 
 function AppContent() {
   const location = useLocation();
@@ -35,9 +36,9 @@ function AppContent() {
           <Route path="/home" element={<Home />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<ListaCategorias />} />
-          <Route path="/loja" element={<ListaCategoriasLoja />} />
+          <Route path="/loja" element={<Loja />} />
           <Route path="/listaprodutos" element={<ListaProdutos />} />
+          <Route path="/produtodescricao/:id" element={<PaginaProduto />} />
           <Route path="/admin" element={<AdminLayout />} />
           <Route path="/admin/categorias" element={<ListaCategoriasAdmin />} />
           <Route path="/admin/cadastrarcategoria" element={<CadastrarCategoriaAdmin />} />
