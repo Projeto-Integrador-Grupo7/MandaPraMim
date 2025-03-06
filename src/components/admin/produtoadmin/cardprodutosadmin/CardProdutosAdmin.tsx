@@ -46,11 +46,11 @@ function CardProdutosAdmin({ item, token, atualizarProdutos }: CardProdutosAdmin
             ToastAlerta('Produto deletado com sucesso', 'sucesso');
             atualizarProdutos();
         } catch (error: any) {
-            ToastAlerta('Erro ao deletar produto:', 'error');
+            ToastAlerta('Erro ao deletar produto:', 'erro');
             if (error.response) {
                 console.log(`Erro ao deletar o produto: ${error.response.data.message || 'Erro desconhecido'}`);
             } else if (error.request) {
-                ToastAlerta('Sem resposta do servidor. Verifique sua conexão.', 'alert');
+                ToastAlerta('Sem resposta do servidor. Verifique sua conexão.', 'alerta');
             } else {
                 ToastAlerta('Erro ao processar a solicitação de deletar.', 'erro');
             }
