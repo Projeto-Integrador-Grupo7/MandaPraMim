@@ -11,6 +11,7 @@ function CarrosselProdutos() {
     const navigate = useNavigate(); // Hook para navegação
     const { usuario } = useContext(AuthContext); // Pegando o token do usuário
     const [produtosRecomendados, setProdutosRecomendados] = useState<Produto[]>([]);
+    const [indexAtual, setIndexAtual] = useState(0);
     const token = usuario.token;
 
     useEffect(() => {
@@ -29,16 +30,30 @@ function CarrosselProdutos() {
         buscarProdutos();
     }, [usuario.token]); // Recarrega a requisição se o token mudar
 
+    // Atualiza os produtos visíveis a cada 5 segundos
+    useEffect(() => {
+        const intervalo = setInterval(() => {
+            setIndexAtual((prevIndex) =>
+                prevIndex + 5 >= produtosRecomendados.length ? 0 : prevIndex + 1
+            );
+        }, 5000); // Altera a cada 5 segundos
+
+        return () => clearInterval(intervalo); // Limpa o intervalo ao desmontar
+    }, [produtosRecomendados]);
+
+    // Pega apenas 5 produtos a partir do índice atual
+    const produtosVisiveis = produtosRecomendados.slice(indexAtual, indexAtual + 5);
+
     return (
-        <section className="w-full bg-gray-100 py-10">
-            <h2 className="text-4xl font-bold text-center text-blue-900 mb-6">
+        <section className="w-full bg-[#f5c840ff] py-10">
+            <h2 className="text-4xl font-bold text-center text-[#E65100] mb-6">
                 Confira nossos <span className="text-black">Produtos Saudáveis</span>
             </h2>
 
             <div className="text-center mb-6">
                 <button
                     onClick={() => navigate("/produtossaudaveis")}
-                    className="text-white py-2 px-6 rounded-lg bg-[#021859] hover:bg-blue-900 transition"
+                    className="text-white py-2 px-6 rounded-lg bg-[#E65100] hover:bg-orange-300 transition"
                 >
                     Ver Todos os Produtos
                 </button>
@@ -58,7 +73,7 @@ function CarrosselProdutos() {
                     }}
                     className="w-full"
                 >
-                    {produtosRecomendados.map((item) => (
+                    {produtosVisiveis.map((item) => (
                         <SwiperSlide key={item.id} className="relative group">
                             <img
                                 src={item.foto}

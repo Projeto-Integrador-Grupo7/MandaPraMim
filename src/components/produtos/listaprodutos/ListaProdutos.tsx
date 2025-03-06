@@ -30,7 +30,7 @@ function ListaProdutos({ categoriaId }: ListaProdutosProps) {
                 },
             });
             setIsLoading(false);
-        } catch (error) {
+        } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout();
             }
@@ -73,7 +73,7 @@ function ListaProdutos({ categoriaId }: ListaProdutosProps) {
 
     return (
         <>
-            <div className="flex justify-between items-center mx-8 my-4">
+            {/* <div className="flex justify-between items-center mx-8 my-4">
                 <p className="text-black font-medium">{count} produtos</p>
                 <div className="flex items-center">
                     <span className="mr-2">Ordenar por:</span>
@@ -84,7 +84,7 @@ function ListaProdutos({ categoriaId }: ListaProdutosProps) {
                         <option>Nome: A-Z</option>
                     </select>
                 </div>
-            </div>
+            </div> */}
 
             {isLoading ? (
                 <div className="flex flex-col items-center justify-center min-h-[400px]">
