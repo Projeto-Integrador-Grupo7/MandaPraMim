@@ -25,7 +25,7 @@ export default function CartModal({ isOpen, onClose, cart, removeFromCart }: Car
                 </header>
 
                 {cart.length === 0 ? (
-                    <p className="mt-4 text-gray-600">O carrinho está vazio.</p>
+                    <p className="mt-4 text-gray-600">A sacola está vazia.</p>
                 ) : (
                     <ul className="space-y-3 mt-4">
                         {cart.map((produto) => (
