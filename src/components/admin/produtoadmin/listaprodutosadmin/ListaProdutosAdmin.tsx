@@ -62,7 +62,7 @@ function ListaProdutosAdmin() {
                             color="#008361"
                             ariaLabel="oval-loading"
                             wrapperStyle={{}}
-                            wrapperClass="flex justify-center items-center min-h-screen mx-150"
+                            wrapperClass="flex justify-center items-center min-h-screen"
                         />
                     )}
                     <div className="flex justify-center w-full my-4">
