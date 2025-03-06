@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 import  Produto from "../models/Produto";
+import { ToastAlerta } from "../utils/ToastAlerta";
 
 // Adicionar apenas as propriedades a Inteface já existente
 interface ContextProps {
@@ -43,8 +44,14 @@ export function Provider({ children }: ContextProviderProps) {
     }
 
     function limparCart() {
-        alert("Compra Efetuada com Sucesso")
-        setItems([])
+        if (items.length === 0) {
+            // Se o carrinho estiver vazio, exibe um alerta de erro
+            ToastAlerta("A sacola está vazia!", "erro");
+        } else {
+            // Caso contrário, exibe o alerta de sucesso e limpa o carrinho
+            ToastAlerta("Compra Efetuada com Sucesso", "sucesso");
+            setItems([]); // Limpa o carrinho
+        }
     }
 
     // Até aqui

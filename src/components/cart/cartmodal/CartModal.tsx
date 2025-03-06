@@ -1,4 +1,6 @@
 import Produto from "../../../models/Produto"; // Importando o modelo do Produto
+import { useContext } from "react";
+import { Context } from "../../../contexts/CartContext";
 
 interface CartModalProps {
     isOpen: boolean;
@@ -8,6 +10,8 @@ interface CartModalProps {
 }
 
 export default function CartModal({ isOpen, onClose, cart, removeFromCart }: CartModalProps) {
+    const { limparCart } = useContext(Context); // Pegando a função limparCart do contexto
+
     const total = cart.reduce((sum, produto) => sum + produto.preco, 0); // Calculando o total do carrinho
 
     return (
@@ -39,6 +43,16 @@ export default function CartModal({ isOpen, onClose, cart, removeFromCart }: Car
                 )}
 
                 <p className="mt-4 font-bold">Total: R$ {total.toFixed(2)}</p>
+
+                <button
+                    onClick={() => {
+                        limparCart(); // Limpa o carrinho quando a compra for finalizada
+                        onClose(); // Fecha a modal
+                    }}
+                    className="mt-4 w-full bg-green-500 text-white py-2 rounded-md"
+                >
+                    Finalizar Compra
+                </button>
 
                 <button
                     onClick={onClose}

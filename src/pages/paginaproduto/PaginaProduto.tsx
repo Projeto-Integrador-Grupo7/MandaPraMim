@@ -3,12 +3,14 @@ import { useParams, useNavigate } from "react-router-dom";
 import Produto from "../../models/Produto";
 import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
+import { Context } from "../../contexts/CartContext";
 
 export default function PaginaProduto() {
   const { id } = useParams<{ id: string }>();
   const [produto, setProduto] = useState<Produto | null>(null);
   const [quantidade, setQuantidade] = useState(1);
   const { usuario } = useContext(AuthContext);
+  const { adicionarProduto } = useContext(Context);
   const token = usuario?.token;
   const navigate = useNavigate();
 
@@ -42,11 +44,6 @@ export default function PaginaProduto() {
     }
   };
 
-  const adicionarAoCarrinho = () => {
-    // Lógica para adicionar ao carrinho
-    alert(`${quantidade} ${produto?.nome} adicionado ao carrinho!`);
-  };
-
   if (!produto) return (
     <div className="flex justify-center items-center h-screen">
       <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
@@ -74,7 +71,7 @@ export default function PaginaProduto() {
             </p>
 
             <div className="mt-6">
-              <div className="flex items-center mb-4">
+              {/* <div className="flex items-center mb-4">
                 <div className="border border-gray-300 flex items-center rounded-md">
                   <button
                     onClick={diminuirQuantidade}
@@ -90,10 +87,10 @@ export default function PaginaProduto() {
                     +
                   </button>
                 </div>
-              </div>
+              </div> */}
 
               <button
-                onClick={adicionarAoCarrinho}
+                onClick={() => adicionarProduto(produto)}
                 className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md transition duration-300"
               >
                 Adicionar ao Carrinho
