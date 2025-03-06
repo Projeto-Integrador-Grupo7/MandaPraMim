@@ -18,6 +18,7 @@ import Perfil from './pages/perfil/Perfil'
 import FormCategoria from './components/admin/categoriaadmin/formcategoria/FormCategoria'
 import { ToastContainer } from 'react-toastify'
 import PaginaSaudaveis from './pages/paginaproduto/PaginaSaudaveis'
+import Sobre from './pages/sobre/Sobre'
 
 function AppContent() {
   const location = useLocation();
@@ -35,6 +36,7 @@ function AppContent() {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/loja" element={<Loja />} />
+          <Route path="/sobre" element={<Sobre />} />
           <Route path="/produtossaudaveis" element={<PaginaSaudaveis />} />
           <Route path="/produtodescricao/:id" element={<PaginaProduto />} />
           <Route path="/perfil" element={<Perfil />} />
