@@ -1,9 +1,10 @@
 import { MapPin, Users, Award, Clock, Target, Heart, Zap, Shield, Smile } from 'lucide-react';
-import FotoPaola from '../../assets/img/fotos/Paola_Patricia_4.webp';
+import FotoPaola from '../../assets/img/fotos/Paola Patricia  (4).jpg';
 import FotoJaime from '../../assets/img/fotos/Jaime (4).jpg';
 import FotoEloiza from '../../assets/img/fotos/Eloiza Fernandes (3).jpg';
 import FotoFelipe from '../../assets/img/fotos/Felipe Macedo (2).jpg';
 import FotoNathan from '../../assets/img/fotos/Nathan Ribeiro  (4).jpg';
+import { LinkedinLogo, GithubLogo } from "@phosphor-icons/react";
 
 function Sobre() {
 
@@ -62,7 +63,7 @@ function Sobre() {
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center">
-          <h1 className="text-5xl font-bold mb-6">Sobre ao Delivery Manda Pra Mim</h1>
+          <h1 className="text-5xl font-bold mb-6">Sobre o Delivery Manda Pra Mim</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Conectando pessoas a sabores incríveis desde 2021. Conheça nossa história,
             missão e os valores que nos tornam referência no mercado de delivery de alimentos no Brasil.
@@ -152,6 +153,10 @@ function Sobre() {
               <div>
                 <h4 className="font-semibold">Product Owner</h4>
                 <p className="text-gray-600">Jaime Filho</p>
+                <div className="flex gap-4 mt-4 justify-center">
+                    <a href="https://www.linkedin.com/in/jaime-filho-2b8ab8217/" target="_blank"><LinkedinLogo size={32} weight="bold" /></a>  
+                    <a href="https://github.com/jaimebranco" target="_blank"><GithubLogo size={32} weight="bold" /></a>          
+                </div>
               </div>
             </div>
 
@@ -164,6 +169,10 @@ function Sobre() {
               <div>
                 <h4 className="font-semibold">Scrum Master</h4>
                 <p className="text-gray-600">Nathan Ribeiro</p>
+                <div className="flex gap-4 mt-4 justify-center">
+                    <a href="https://www.linkedin.com/in/dev-nathan-ribeiro/" target="_blank"><LinkedinLogo size={32} weight="bold" /></a>  
+                    <a href="https://github.com/Shost01" target="_blank"><GithubLogo size={32} weight="bold" /></a>          
+                </div>
               </div>
             </div>
 
@@ -176,6 +185,10 @@ function Sobre() {
               <div>
                 <h4 className="font-semibold">Desenvolvedora</h4>
                 <p className="text-gray-600">Eloiza Fernandes</p>
+                <div className="flex gap-4 mt-4 justify-center">
+                    <a href="https://www.linkedin.com/in/eloiza-fernandes-5aaba2262/" target="_blank"><LinkedinLogo size={32} weight="bold" /></a>  
+                    <a href="https://github.com/eloizafns" target="_blank"><GithubLogo size={32} weight="bold" /></a>          
+                </div>
               </div>
             </div>
 
@@ -188,6 +201,10 @@ function Sobre() {
               <div>
                 <h4 className="font-semibold">Desenvolvedor</h4>
                 <p className="text-gray-600">Felipe Macedo</p>
+                <div className="flex gap-4 mt-4 justify-center">
+                    <a href="https://www.linkedin.com/in/felipe-macedo-dev/" target="_blank"><LinkedinLogo size={32} weight="bold" /></a>  
+                    <a href="https://github.com/FehMacedo10" target="_blank"><GithubLogo size={32} weight="bold" /></a>          
+                </div>
               </div>
             </div>
 
@@ -200,6 +217,10 @@ function Sobre() {
               <div>
                 <h4 className="font-semibold">Desenvolvedora</h4>
                 <p className="text-gray-600">Paola Patrícia</p>
+                <div className="flex gap-4 mt-4 justify-center">
+                    <a href="http://www.linkedin.com/in/paola-patricia-9bba6b15a" target="_blank"><LinkedinLogo size={32} weight="bold" /></a>  
+                    <a href="https://github.com/PaolaPatricia16" target="_blank"><GithubLogo size={32} weight="bold" /></a>          
+                </div>
               </div>
             </div>
           </div>

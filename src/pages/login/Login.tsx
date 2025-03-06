@@ -16,7 +16,7 @@ function Login() {
     )
 
 
-    const [showImage, setShowImage] = useState(true);
+    // const [showImage, setShowImage] = useState(true);
 
     useEffect(() => {
         if (usuario.token !== "") {
@@ -25,15 +25,15 @@ function Login() {
     }, [usuario])
 
 
-    useEffect(() => {
-      // Define um temporizador para ocultar a imagem após 3 segundos (3000 milissegundos)
-      const timer = setTimeout(() => {
-          setShowImage(false);
-      }, 1200);
+//     useEffect(() => {
+//       // Define um temporizador para ocultar a imagem após 3 segundos (3000 milissegundos)
+//       const timer = setTimeout(() => {
+//           setShowImage(false);
+//       }, 1200);
 
-      // Limpa o temporizador quando o componente é desmontado
-      return () => clearTimeout(timer);
-  }, []);
+//       // Limpa o temporizador quando o componente é desmontado
+//       return () => clearTimeout(timer);
+//   }, []);
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
         setUsuarioLogin({
@@ -51,13 +51,13 @@ function Login() {
 
     return (
       <>
-      {showImage ? ( // Mostra a imagem enquanto showImage é verdadeiro
+      {/* {showImage ? ( // Mostra a imagem enquanto showImage é verdadeiro
         <div className="h-screen w-full hiden">
             <img 
               className='h-screen w-full'
               src="https://ik.imagekit.io/pphc/fundo?updatedAt=1741234512704" alt="Splash Screen" />
         </div>
-    ) : ( // Mostra o formulário de login quando showImage é 
+    ) : ( // Mostra o formulário de login quando showImage é  */}
              <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#f5c840ff] h-screen items-center font-bold mx-0">
                 <div className='  w-2xl justify-self-end'>
                     <h1 className="text-6xl  py-9 text-center">Seja Bem-Vindo</h1>
@@ -118,7 +118,7 @@ function Login() {
                 <div className="fundoLogin my-auto mx-30 hidden lg:block "></div>
 
             </div>
-      )}
+      {/* )} */}
       </>
     );
 }
