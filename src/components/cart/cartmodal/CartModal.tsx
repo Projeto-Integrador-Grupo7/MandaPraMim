@@ -20,12 +20,12 @@ export default function CartModal({ isOpen, onClose, cart, removeFromCart }: Car
         >
             <div className="p-6">
                 <header className="flex justify-between items-center">
-                    <h2 className="text-xl font-bold">Carrinho de Compras</h2>
+                    <h2 className="text-xl font-bold">Sacola de Compras</h2>
                     <button onClick={onClose} className="text-gray-500 text-xl">&times;</button>
                 </header>
 
                 {cart.length === 0 ? (
-                    <p className="mt-4 text-gray-600">O carrinho está vazio.</p>
+                    <p className="mt-4 text-gray-600">A sacola está vazia.</p>
                 ) : (
                     <ul className="space-y-3 mt-4">
                         {cart.map((produto) => (
