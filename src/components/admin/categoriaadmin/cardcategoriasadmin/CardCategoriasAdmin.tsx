@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FiMoreHorizontal, FiEdit, FiTrash2 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import Categoria from '../../../models/Categoria';
+import Categoria from '../../../../models/Categoria';
 import { deletar } from '../../../../services/Service';
 import { RotatingLines } from 'react-loader-spinner';
 
@@ -67,7 +67,7 @@ function CardCategoriasAdmin({
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="relative border rounded-lg shadow-lg flex items-center justify-between hover:shadow-xl transition-shadow duration-300 max-w-full">
-        <img
+          <img
           className="w-full h-full object-cover opacity-400"
           src={categoria.foto}
           alt={categoria.nome}

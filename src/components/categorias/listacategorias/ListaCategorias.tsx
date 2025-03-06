@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../services/Service";
-import { DNA } from "react-loader-spinner";
+import { DNA, Oval } from "react-loader-spinner";
 
 function ListaCategorias() {
   const navigate = useNavigate();
@@ -35,13 +35,14 @@ function ListaCategorias() {
       <div className="flex flex-col items-center min-h-screen bg-yellow-500">
         <div className="container flex flex-col mt-10 justify-center items-center">
           {categorias.length === 0 && (
-            <DNA
+            <Oval
               visible={true}
-              height="200"
-              width="200"
-              ariaLabel="dna-loading"
+              height="80"
+              width="80"
+              color="#008361"
+              ariaLabel="oval-loading"
               wrapperStyle={{}}
-              wrapperClass="dna-wrapper mx-auto"
+              wrapperClass="flex justify-center items-center min-h-screen mx-150"
             />
           )}
           <div className="grid grid-cols-2 gap-4 grid-center">

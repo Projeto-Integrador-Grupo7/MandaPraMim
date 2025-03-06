@@ -66,8 +66,7 @@ function Navbar() {
                     <Link to="/admin" className="hover:underline">Adm</Link>
                     <Link to="/perfil" className="hover:underline">Perfil</Link>
                     <Link to="/sobre" className="hover:underline">Sobre</Link>
-
-
+                    <Link to="/listaprodutos" className="hover:underline">Teste</Link>
                 </div>
             </div>
 

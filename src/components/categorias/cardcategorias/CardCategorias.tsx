@@ -11,7 +11,7 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
         <img
           className="w-full h-full object-cover opacity-400"
           src={categoria.foto}
-          alt="Comidas Saudáveis"
+          alt={categoria.nome}
         />
 
         <div className="absolute inset-0 bg-black opacity-40"></div>

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import CardProdutos from "../cardprodutosadmin/CardProdutosAdmin";
+import CardProdutosAdmin from "../cardprodutosadmin/CardProdutosAdmin";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../../contexts/AuthContext";
 import Produto from "../../../../models/Produto";
@@ -44,13 +44,13 @@ function ListaProdutosAdmin() {
 
     return (
         <>
-            <div className="flex h-screen=">
+            <div className="flex h-screen overflow-hidden">
                 < Sidebar />
-                <div className="container mx-auto px-4 py-6 flex-1 p-6">
+                <div className="container mx-auto px-4 py-6 flex-1 p-6 overflow-y-auto">
                     <h1 className="text-4xl font-bold mb-6 ml-4">Produtos</h1>
                     <Link to="/admin/cadastrarproduto">
                         <button className="mt-6 bg-teal-500 text-white py-2 px-4 rounded-full hover:bg-teal-600 ml-4 mb-3">
-                        + Novo Produto
+                            + Novo Produto
                         </button>
                     </Link>
 
@@ -71,7 +71,12 @@ function ListaProdutosAdmin() {
                                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
                             >
                                 {produtos.map((produto) => (
-                                    <CardProdutos key={produto.id} item={produto} />
+                                    <CardProdutosAdmin
+                                        key={produto.id}
+                                        item={produto}
+                                        token={usuario.token}
+                                        atualizarProdutos={buscarProdutos}
+                                    />
                                 ))}
                             </div>
                         </div>
