@@ -5,12 +5,12 @@ function Loja() {
     const navigate = useNavigate();
 
     return (
-        <div className="bg-yellow-400 min-h-screen py-8 px-4">
+        <div className="bg-[#f5c840ff] min-h-screen py-8 px-4">
             <div className="container mx-auto">
                 <h1 className="text-2xl font-bold text-black mb-6">Loja</h1>
-                <a href="">
-                    <ListaProdutos />
-                </a>
+
+                <ListaProdutos />
+
             </div>
         </div>
     );

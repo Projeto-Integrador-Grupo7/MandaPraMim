@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Produto from "../../models/Produto";
 import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -9,6 +9,14 @@ export default function PaginaProduto() {
   const [produto, setProduto] = useState<Produto | null>(null);
   const { usuario } = useContext(AuthContext);
   const token = usuario?.token;
+  const navigate = useNavigate();
+
+  // Verificar se o token está presente e redirecionar caso contrário
+  useEffect(() => {
+    if (!token) {
+      navigate("/login"); // Redireciona para a página de login se o usuário não estiver autenticado
+    }
+  }, [token, navigate]);
 
   useEffect(() => {
     if (token && id) {
@@ -23,7 +31,7 @@ export default function PaginaProduto() {
   if (!produto) return <p>Loading...</p>;
 
   return (
-    <div className="flex gap-8 p-8">
+    <div className="flex gap-8 p-8 ">
       <img src={produto.foto} alt={produto.nome} className="w-1/3 rounded-lg" />
       <div>
         <h1 className="text-3xl font-bold">{produto.nome}</h1>

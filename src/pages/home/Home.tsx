@@ -1,5 +1,7 @@
 import VideoBg from '../../assets/videos/VideoEntregador.mp4';
 import ListaCategorias from '../../components/categorias/listacategorias/ListaCategorias';
+import CarrosselProdutos from '../../utils/Carrossel';
+
 
 function Home() {
     return (
@@ -39,7 +41,12 @@ function Home() {
                     </div>
                 </div>
             </div>
+
+
             < ListaCategorias />
+            < CarrosselProdutos />
+
+
         </>
     );
 }

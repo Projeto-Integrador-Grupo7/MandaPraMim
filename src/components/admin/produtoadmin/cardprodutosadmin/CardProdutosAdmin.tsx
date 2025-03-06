@@ -5,14 +5,15 @@ import Produto from "../../../../models/Produto";
 import { deletar } from '../../../../services/Service';
 import { RotatingLines } from 'react-loader-spinner';
 
-interface CardProdutosProps {
+
+interface CardProdutosAdminProps {
     item: Produto;
     hasOptions?: boolean;
     token: string;
     atualizarProdutos: () => void;
 }
 
-function CardProdutosAdmin({ item, token, atualizarProdutos }: CardProdutosProps) {
+function CardProdutosAdmin({ item, token, atualizarProdutos }: CardProdutosAdminProps) {
     const [openOptions, setOpenOptions] = useState<number | null>(null);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
