@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import CardProdutos from "../cardprodutosadmin/CardProdutosAdmin";
+import CardProdutosAdmin from "../cardprodutosadmin/CardProdutosAdmin";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../../contexts/AuthContext";
 import Produto from "../../../../models/Produto";
@@ -71,7 +71,7 @@ function ListaProdutosAdmin() {
                                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
                             >
                                 {produtos.map((produto) => (
-                                    <CardProdutos key={produto.id} item={produto} />
+                                    <CardProdutosAdmin key={produto.id} item={produto} />
                                 ))}
                             </div>
                         </div>

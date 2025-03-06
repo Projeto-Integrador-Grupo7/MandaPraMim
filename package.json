@@ -22,7 +22,8 @@
     "react-router-dom": "^7.2.0",
     "react-sidebar": "^3.0.2",
     "react-toastify": "^11.0.5",
-    "reactjs-popup": "^2.0.6"
+    "reactjs-popup": "^2.0.6",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

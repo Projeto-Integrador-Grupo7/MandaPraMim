@@ -12,9 +12,7 @@ type CardCategoriasAdminProps = {
   atualizarCategorias: () => void;
 };
 
-function CardCategoriasAdmin({
-  categoria,
-  token,
+function CardCategoriasAdmin({ categoria, token,
   atualizarCategorias
 }: CardCategoriasAdminProps) {
   const [openOptions, setOpenOptions] = useState<number | null>(null);
