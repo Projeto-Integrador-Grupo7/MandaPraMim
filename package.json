@@ -15,6 +15,7 @@
     "@types/swiper": "^6.0.0",
     "axios": "^1.8.1",
     "feather-icons": "^4.29.2",
+    "framer-motion": "^12.4.10",
     "lucide-react": "^0.477.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

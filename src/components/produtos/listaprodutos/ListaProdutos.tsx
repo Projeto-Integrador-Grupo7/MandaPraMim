@@ -4,67 +4,114 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
-import { Oval } from "react-loader-spinner";
+import { motion } from "framer-motion";
 
-function ListaProdutos() {
-
+function ListaProdutos({ categoriaId }) {
     const navigate = useNavigate();
-
-    const [produtos, setProdutos] = useState<Produto[]>([]);
+    const [produtos, setProdutos] = useState([]);
+    const [produtosFiltrados, setProdutosFiltrados] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [count, setCount] = useState(0);
 
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
     async function buscarProdutos() {
+        setIsLoading(true);
         try {
             await buscar('/produtos', setProdutos, {
                 headers: {
                     Authorization: token,
                 },
-            })
-
-        } catch (error: any) {
+            });
+            setIsLoading(false);
+        } catch (error) {
             if (error.toString().includes('403')) {
-                handleLogout()
+                handleLogout();
             }
+            setIsLoading(false);
         }
     }
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            alert('Você precisa estar logado');
             navigate('/');
+        } else {
+            buscarProdutos();
         }
-    }, [token])
+    }, [token]);
 
     useEffect(() => {
-        buscarProdutos()
-    }, [produtos.length])
+        if (categoriaId === 0) {
+            setProdutosFiltrados(produtos);
+        } else {
+            setProdutosFiltrados(produtos.filter(produto => produto.categoria.id === categoriaId));
+        }
+        setCount(categoriaId === 0 ? produtos.length : produtos.filter(produto => produto.categoria.id === categoriaId).length);
+    }, [categoriaId, produtos]);
+
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const item = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0 }
+    };
 
     return (
         <>
-            {produtos.length === 0 && (
-                <Oval
-                    visible={true}
-                    height="80"
-                    width="80"
-                    color="#008361"
-                    ariaLabel="oval-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="flex justify-center items-center min-h-screen mx-150"
-                />
-            )}
-            <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col mx-2">
-                    <div className="container mx-auto my-4 
-                        grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-                    >
-                        {produtos.map((produto) => (
-                            <CardProdutos key={produto.id} item={produto} />
-                        ))}
-                    </div>
+            <div className="flex justify-between items-center mx-8 my-4">
+                <p className="text-black font-medium">{count} produtos</p>
+                <div className="flex items-center">
+                    <span className="mr-2">Ordenar por:</span>
+                    <select className="bg-transparent border border-black rounded-md px-2 py-1">
+                        <option>Default</option>
+                        <option>Preço: Menor para Maior</option>
+                        <option>Preço: Maior para Menor</option>
+                        <option>Nome: A-Z</option>
+                    </select>
                 </div>
             </div>
+
+            {isLoading ? (
+                <div className="flex flex-col items-center justify-center min-h-[400px]">
+                    <div className="w-16 h-1 bg-gray-300 rounded-full overflow-hidden">
+                        <motion.div
+                            className="h-full bg-orange-500"
+                            initial={{ width: 0 }}
+                            animate={{ width: "100%" }}
+                            transition={{
+                                duration: 1.5,
+                                repeat: Infinity,
+                                repeatType: "reverse",
+                                ease: "easeInOut"
+                            }}
+                        />
+                    </div>
+                    <p className="text-sm text-gray-600 mt-3">Carregando produtos...</p>
+                </div>
+            ) : (
+                <motion.div
+                    className="container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    variants={container}
+                    initial="hidden"
+                    animate="show"
+                >
+                    {produtosFiltrados.map((produto) => (
+                        <motion.div key={produto.id} variants={item}>
+                            <CardProdutos item={produto} />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            )}
         </>
     );
 }
