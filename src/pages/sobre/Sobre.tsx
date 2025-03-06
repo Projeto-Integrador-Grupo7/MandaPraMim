@@ -139,6 +139,7 @@ function Sobre() {
 
       {/* NOSSA EQUIPE DE PROFISSIONAIS */}
       <div className="bg-white rounded-lg shadow-lg p-8 gap-8 flex flex-col text-center">
+        
         <h3 className="text-3xl font-bold text-center mb-4 text-[#FF5722]">Nossa Equipe</h3>
         <div className="flex justify-center items-center">
           <div className="grid md:grid-cols-5 gap-8 place-items-center">
