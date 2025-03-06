@@ -17,7 +17,7 @@ function CardCategoriasLoja({ categoria, isActive }: CardCategoriasProps) {
         <img
           src={categoria.foto}
           alt={categoria.nome}
-          className={`w-40 h-40 rounded-full object-cover ${isActive ? 'border-4 border-orange-500' : 'border-2 border-transparent'}`}
+          className={`w-30 h-30 rounded-full object-cover ${isActive ? 'border-4 border-orange-500' : 'border-2 border-transparent'}`}
         />
         {isActive && (
           <motion.div

@@ -1,3 +1,4 @@
+
 import Categoria from "../../../models/Categoria"
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +17,7 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
   return (
     <>
       <div
-        className="relative max-w-sm rounded-lg overflow-hidden shadow-lg cursor-pointer"
+        className="relative w-[450px] h-[250px] rounded-lg overflow-hidden shadow-lg cursor-pointer mb-7"
         onClick={navegarParaLoja}
       >
         <img

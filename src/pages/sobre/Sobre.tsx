@@ -1,5 +1,5 @@
-import { MapPin, Users, Award, Clock, Target, Heart, Zap, Shield, Smile, Truck, Star } from 'lucide-react';
-import FotoPaola from '../../assets/img/fotos/Eu.webp';
+import { MapPin, Users, Award, Clock, Target, Heart, Zap, Shield, Smile } from 'lucide-react';
+import FotoPaola from '../../assets/img/fotos/Paola_Patricia_4.webp';
 import FotoJaime from '../../assets/img/fotos/Jaime (4).jpg';
 import FotoEloiza from '../../assets/img/fotos/Eloiza Fernandes (3).jpg';
 import FotoFelipe from '../../assets/img/fotos/Felipe Macedo (2).jpg';
@@ -139,6 +139,7 @@ function Sobre() {
 
       {/* NOSSA EQUIPE DE PROFISSIONAIS */}
       <div className="bg-white rounded-lg shadow-lg p-8 gap-8 flex flex-col text-center">
+        
         <h3 className="text-3xl font-bold text-center mb-4 text-[#FF5722]">Nossa Equipe</h3>
         <div className="flex justify-center items-center">
           <div className="grid md:grid-cols-5 gap-8 place-items-center">

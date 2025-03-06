@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Categoria from '../../../../models/Categoria';
 import { deletar } from '../../../../services/Service';
 import { RotatingLines } from 'react-loader-spinner';
+import { ToastAlerta } from '../../../../utils/ToastAlerta';
 
 type CardCategoriasAdminProps = {
   categoria: Categoria;
@@ -40,21 +41,21 @@ function CardCategoriasAdmin({ categoria, token,
         }
       });
 
-      alert('Categoria deletada com sucesso');
+      ToastAlerta('Categoria deletada com sucesso', 'sucesso');
       atualizarCategorias(); // Atualiza a lista de categorias após a deleção
     } catch (error: any) {
-      console.error('Erro ao deletar categoria:', error);
+      ToastAlerta('Erro ao deletar categoria', 'erro');
 
       // Tratamento de erro mais detalhado
       if (error.response) {
         // O servidor respondeu com um status de erro
-        alert(`Erro ao deletar a categoria: ${error.response.data.message || 'Erro desconhecido'}`);
+        console.log(`Erro ao deletar a categoria: ${error.response.data.message || 'Erro desconhecido'}`);
       } else if (error.request) {
         // A requisição foi feita, mas não houve resposta
-        alert('Sem resposta do servidor. Verifique sua conexão.');
+        ToastAlerta('Sem resposta do servidor. Verifique sua conexão.', 'erro');
       } else {
         // Algo aconteceu ao configurar a requisição
-        alert('Erro ao processar a solicitação de deleção.');
+        ToastAlerta('Erro ao processar a solicitação de deleção.','erro');
       }
     } finally {
       setIsLoading(false);
@@ -64,8 +65,8 @@ function CardCategoriasAdmin({ categoria, token,
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <div className="relative border rounded-lg shadow-lg flex items-center justify-between hover:shadow-xl transition-shadow duration-300 max-w-full">
-          <img
+      <div className="w-80 h-52 relative border rounded-lg shadow-lg flex items-center justify-between hover:shadow-xl transition-shadow duration-300">
+        <img
           className="w-full h-full object-cover opacity-400"
           src={categoria.foto}
           alt={categoria.nome}
