@@ -46,7 +46,7 @@ export default function CartModal({ isOpen, onClose, cart, removeFromCart }: Car
 
                 <button
                     onClick={() => {
-                        limparCart(); // Limpa o carrinho quando a compra for finalizada
+                        limparCart(); // Limpa a sacola quando a compra for finalizada
                         onClose(); // Fecha a modal
                     }}
                     className="mt-4 w-full bg-green-500 text-white py-2 rounded-md"
