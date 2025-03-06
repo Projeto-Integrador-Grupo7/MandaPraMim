@@ -8,7 +8,7 @@ import { Context } from "../../contexts/CartContext";
 export default function PaginaProduto() {
   const { id } = useParams<{ id: string }>();
   const [produto, setProduto] = useState<Produto | null>(null);
-  const [quantidade, setQuantidade] = useState(1);
+  // const [quantidade, setQuantidade] = useState(1);
   const { usuario } = useContext(AuthContext);
   const { adicionarProduto } = useContext(Context);
   const token = usuario?.token;
