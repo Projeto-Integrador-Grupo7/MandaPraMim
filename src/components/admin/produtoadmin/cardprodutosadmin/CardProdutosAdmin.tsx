@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Produto from "../../../../models/Produto";
 import { deletar } from '../../../../services/Service';
 import { RotatingLines } from 'react-loader-spinner';
+import { ToastAlerta } from '../../../../utils/ToastAlerta';
 
 
 interface CardProdutosAdminProps {
@@ -42,16 +43,16 @@ function CardProdutosAdmin({ item, token, atualizarProdutos }: CardProdutosAdmin
                 }
             });
 
-            alert('Produto deletado com sucesso');
+            ToastAlerta('Produto deletado com sucesso', 'sucesso');
             atualizarProdutos();
         } catch (error: any) {
-            console.error('Erro ao deletar produto:', error);
+            ToastAlerta('Erro ao deletar produto:', 'error');
             if (error.response) {
-                alert(`Erro ao deletar o produto: ${error.response.data.message || 'Erro desconhecido'}`);
+                console.log(`Erro ao deletar o produto: ${error.response.data.message || 'Erro desconhecido'}`);
             } else if (error.request) {
-                alert('Sem resposta do servidor. Verifique sua conexão.');
+                ToastAlerta('Sem resposta do servidor. Verifique sua conexão.', 'alert');
             } else {
-                alert('Erro ao processar a solicitação de deleção.');
+                ToastAlerta('Erro ao processar a solicitação de deletar.', 'erro');
             }
         } finally {
             setIsLoading(false);

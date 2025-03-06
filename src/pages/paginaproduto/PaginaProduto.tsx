@@ -4,6 +4,7 @@ import Produto from "../../models/Produto";
 import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
 import { Context } from "../../contexts/CartContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 export default function PaginaProduto() {
   const { id } = useParams<{ id: string }>();
@@ -28,7 +29,7 @@ export default function PaginaProduto() {
     if (token && id) {
       buscar(`/produtos/${id}`, setProduto, { headers: { Authorization: token } }).catch((error) => {
         if (error.toString().includes('403')) {
-          alert("Sessão expirada. Faça login novamente.");
+          ToastAlerta("Sessão expirada. Faça login novamente.", 'erro');
         }
       });
     }

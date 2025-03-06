@@ -6,6 +6,7 @@ import { buscar, atualizar, cadastrar } from "../../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 import Produto from "../../../../models/Produto";
 import Sidebar from "../../sidebar/Sidebar";
+import { ToastAlerta } from "../../../../utils/ToastAlerta";
 
 function FormProduto() {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ function FormProduto() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado!');
+      ToastAlerta('Você precisa estar logado!', 'alerta');
       navigate('/');
     }
   }, [token]);
@@ -102,12 +103,12 @@ function FormProduto() {
           },
         });
 
-        alert('Produto atualizado com sucesso!');
+        ToastAlerta('Produto atualizado com sucesso!', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao atualizar o Produto!');
+          ToastAlerta('Erro ao atualizar o Produto!', 'erro');
         }
       }
     } else {
@@ -118,12 +119,12 @@ function FormProduto() {
           },
         });
 
-        alert('Produto cadastrado com sucesso!');
+        ToastAlerta('Produto cadastrado com sucesso!', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao cadastrar o Produto!');
+          ToastAlerta('Erro ao cadastrar o Produto!', 'erro');
         }
       }
     }

@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import { motion } from "framer-motion";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 interface ListaProdutosProps {
     categoriaId: number;
@@ -39,7 +40,7 @@ function ListaProdutos({ categoriaId }: ListaProdutosProps) {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta('Você precisa estar logado', 'alerta');
             navigate('/');
         } else {
             buscarProdutos();
