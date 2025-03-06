@@ -1,5 +1,5 @@
-import { MapPin, Users, Award, Clock, Target, Heart, Zap, Shield, Smile, Truck, Star } from 'lucide-react';
-import FotoPaola from '../../assets/img/fotos/Eu.webp';
+import { MapPin, Users, Award, Clock, Target, Heart, Zap, Shield, Smile } from 'lucide-react';
+import FotoPaola from '../../assets/img/fotos/Paola_Patricia_4.webp';
 import FotoJaime from '../../assets/img/fotos/Jaime (4).jpg';
 import FotoEloiza from '../../assets/img/fotos/Eloiza Fernandes (3).jpg';
 import FotoFelipe from '../../assets/img/fotos/Felipe Macedo (2).jpg';

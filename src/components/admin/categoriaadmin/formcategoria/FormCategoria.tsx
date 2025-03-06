@@ -58,11 +58,20 @@ function FormCategoria() {
     e.preventDefault()
     setIsLoading(true)
 
-    console.log("Categoria antes do envio:", categoria);
+    const categoriaParaEnvio = {
+      id: categoria.id,
+      nome: categoria.nome,
+      descricao: categoria.descricao,
+      foto: categoria.foto
+      // sem o campo produto
+    };
+
+    console.log("Categoria antes do envio:", categoriaParaEnvio);
 
     if (id !== undefined) {
       try {
-        await atualizar(`/categorias`, categoria, setCategoria, {
+        console.log("Categoria enviada para atualização:", categoriaParaEnvio);
+        await atualizar(`/categorias`, categoriaParaEnvio, setCategoria, {
           headers: { 'Authorization': token }
         })
         alert('A Categoria foi atualizado com sucesso!')
