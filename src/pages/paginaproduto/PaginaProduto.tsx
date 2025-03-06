@@ -34,15 +34,15 @@ export default function PaginaProduto() {
     }
   }, [id, token]);
 
-  const aumentarQuantidade = () => {
-    setQuantidade(quantidade + 1);
-  };
+  // const aumentarQuantidade = () => {
+  //   setQuantidade(quantidade + 1);
+  // };
 
-  const diminuirQuantidade = () => {
-    if (quantidade > 1) {
-      setQuantidade(quantidade - 1);
-    }
-  };
+  // const diminuirQuantidade = () => {
+  //   if (quantidade > 1) {
+  //     setQuantidade(quantidade - 1);
+  //   }
+  // };
 
   if (!produto) return (
     <div className="flex justify-center items-center h-screen">
