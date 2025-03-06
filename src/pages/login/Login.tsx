@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { AuthContext } from '../../contexts/AuthContext';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
@@ -15,11 +15,25 @@ function Login() {
         {} as UsuarioLogin
     )
 
+
+    const [showImage, setShowImage] = useState(true);
+
     useEffect(() => {
         if (usuario.token !== "") {
             navigate('/home')
         }
     }, [usuario])
+
+
+    useEffect(() => {
+      // Define um temporizador para ocultar a imagem após 3 segundos (3000 milissegundos)
+      const timer = setTimeout(() => {
+          setShowImage(false);
+      }, 2500);
+
+      // Limpa o temporizador quando o componente é desmontado
+      return () => clearTimeout(timer);
+  }, []);
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
         setUsuarioLogin({
@@ -36,11 +50,19 @@ function Login() {
 
 
     return (
-        <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 bg-yellow-400 h-screen place-items-center font-bold ">
-                <div className=' bg-pink-300 items-center justify-center'>
+      <>
+      {showImage ? ( // Mostra a imagem enquanto showImage é verdadeiro
+        <div className="h-screen w-full hiden">
+            <img 
+              className='h-screen w-full'
+              src="https://ik.imagekit.io/pphc/fundo?updatedAt=1741234512704" alt="Splash Screen" />
+        </div>
+    ) : ( // Mostra o formulário de login quando showImage é 
+             <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#f5c840ff] h-screen items-center font-bold mx-0">
+                <div className='  w-2xl justify-self-end'>
+                    <h1 className="text-6xl  py-9 text-center">Seja Bem-Vindo</h1>
                     <form className="flex mx-auto items-center  flex-col w-xl gap-4"  onSubmit={login}>
-                        <h1 className="text-6xl  py-3">Login</h1>
+                        
                     
                         <div className="flex flex-col w-full text-xl ">
                             <label htmlFor="usuario">E-mail</label>
@@ -61,7 +83,7 @@ function Login() {
                                 type="password"
                                 id="senha"
                                 name="senha"
-                                placeholder="Senha"
+                                placeholder="senha"
                                 className="bg-white rounded-2xl p-2 h-14"
                                 value={usuarioLogin.senha}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -83,25 +105,21 @@ function Login() {
                                 <span>Entrar</span>
                             }
                         </button>
-
-                        <hr className="border-orange-600 w-full" />
-
-                        
-                        <p className='text-white'>
-                            Ainda não tem uma conta?{' '}
-                            <Link to='/cadastro'className='text-rosa-neon underline'> Cadastre-se </Link>
-                        
-                        </p>
+                        <hr className="border-amber-800 w-full" />
+                          <p className='text-amber-700 text-lg'>
+                              Ainda não tem uma conta?{' '}
+                              <Link to='/cadastro'className='text-rosa-neon underline'> Cadastre-se </Link>                        
+                          </p>
+          
                     </form>
                 </div>
 
             
-                <div className="fundoLogin bg-amber-800 my-auto mx-30 hidden lg:block "></div>
-                
-                
-                
+                <div className="fundoLogin my-auto mx-30 hidden lg:block "></div>
+
             </div>
-        </>
+      )}
+      </>
     );
 }
 

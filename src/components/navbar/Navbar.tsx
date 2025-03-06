@@ -12,9 +12,13 @@ function Navbar() {
 
     const { usuario, handleLogout } = useContext(AuthContext);
 
+    // Controle de acesso
+    const tipoUsuario = localStorage.getItem("tipoUsuario");
+
     function logout() {
 
         handleLogout()
+        localStorage.removeItem("tipoUsuario");
         ToastAlerta('O Usuário foi desconectado com sucesso!', 'info')
         navigate('/')
     }
@@ -25,34 +29,8 @@ function Navbar() {
     if (usuario.token !== "") {
 
         component = (
-            <button className="py-4 px-9 rounded-4xl bg-black text-white">    
-                <Link to='/home' onClick={logout} className='hover:underline'>Sair</Link>
-            </button>  
-
-        )
-    }else{
-        component =(
-            <>
-             <Link to="/login">
-                    <button className="bg-black hover:bg-gray-400 text-white mt-2 px-8 py-3 rounded-full text-lg font-semibold">
-                        Login
-                    </button>
-                </Link>
-
-        <Link to='/cadastro' className="hover:underline"> 
-        <button className="bg-black hover:bg-gray-400 text-white mt-2 px-8 py-3 rounded-full text-lg font-semibold">
-                        Cadastrar
-                    </button>
-        </Link>
-        </>
-        )
-    }
-
-
-
-
-    return (
-        <nav className="w-full bg-[#E65100] min-h-[60px] py-4 flex items-center justify-between px-10">
+           
+            <nav className="w-full bg-[#E65100] min-h-[60px] py-4 flex items-center justify-between px-10">
             {/* Logo + Menu de navegação */}
             <div className="flex items-center gap-6">
                 <Link to="/home">
@@ -60,14 +38,19 @@ function Navbar() {
                 </Link>
 
                 {/* Menu de navegação */}
-                <div className="hidden md:flex gap-6 text-lg font-semibold text-black">
+                <div className="hidden md:flex gap-6 text-xl font-semibold text-white">
                     <Link to="/home" className="hover:underline">Início</Link>
                     <Link to="/loja" className="hover:underline">Loja</Link>
-                    <Link to="/admin" className="hover:underline">Adm</Link>
+
+                    {tipoUsuario === "Admin" && (
+                        <Link to="/admin" className="hover:underline">Adm</Link>
+                    )}
+
                     <Link to="/perfil" className="hover:underline">Perfil</Link>
                     <Link to="/sobre" className="hover:underline">Sobre</Link>
-
                    
+                     
+
                 </div>
             </div>
 
@@ -77,12 +60,26 @@ function Navbar() {
                 <div className="mt-0">
                     <ButtonShop />
                 </div>
-
-                {component}
-                {/* Botão de login */}
+                
+                <button className="bg-black hover:bg-gray-400 text-white mt-2 px-8 py-3 rounded-full text-lg font-semibold">    
+                    <Link to='/login' onClick={logout} className='hover:underline'>Sair</Link>
+                </button> 
+                
+              
           
             </div>
         </nav>
+       
+        )
+    }
+
+
+
+
+    return (
+        <>
+            {component}
+        </>
     );
 }
 

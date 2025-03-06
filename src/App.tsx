@@ -20,6 +20,7 @@ import ListaProdutosAdmin from './components/admin/produtoadmin/listaprodutosadm
 import ListaCategorias from './components/categorias/listacategorias/ListaCategorias'
 import ListaCategoriasLoja from './components/categorias/listacategorias/ListaCategoriasLoja'
 import Perfil from './pages/perfil/Perfil'
+import { ToastContainer } from 'react-toastify'
 
 function AppContent() {
   const location = useLocation();
@@ -39,8 +40,8 @@ function AppContent() {
           <Route path="/home" element={<ListaCategorias />} />
           <Route path="/loja" element={<ListaCategoriasLoja />} />
           <Route path="/listaprodutos" element={<ListaProdutos />} />
-          <Route path="/admin" element={<AdminLayout />} />
           <Route path="/perfil" element={<Perfil />} />
+          <Route path="/admin" element={<AdminLayout />} />
           <Route path="/admin/categorias" element={<ListaCategoriasAdmin />} />
           <Route path="/admin/cadastrarcategoria" element={<CadastrarCategoriaAdmin />} />
           <Route path="/admin/editarcategoria/:id" element={<EditarCategoriaAdmin />} />
@@ -51,6 +52,7 @@ function AppContent() {
           <Route path="/admin/deletarproduto/:id" element={<DeletarProduto />} />
         </Routes>
       </div>
+
       {!isAdminRoute && <Footer />}
     </>
   )
@@ -59,9 +61,13 @@ function AppContent() {
 function App() {
   return (
     <AuthProvider>
+      <ToastContainer/>
       <Provider>
         <BrowserRouter>
+
+        
           <AppContent />
+          
         </BrowserRouter>
       </Provider>
     </AuthProvider>

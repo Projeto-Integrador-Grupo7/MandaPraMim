@@ -74,7 +74,7 @@ function Cadastro() {
     <>
     {/* place-... = justifica e alinha os elementos em um container */}
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen 
-            place-items-center font-bold bg-yellow-400">
+            place-items-center font-bold bg-[#f5c840ff]">
 
         <form className='flex justify-center items-center flex-col w-2/3 gap-3 text-black text-xl' onSubmit={cadastrarNovoUsuario} >
           <h2 className=' text-6xl'>Cadastro</h2>
@@ -148,7 +148,7 @@ function Cadastro() {
 
           <div className="flex justify-around w-full gap-8">
             {/* hover... = atribui uma cor quando o mouse passa por cima do elemento */}
-            <button className='rounded text-white bg-slate-400 
+            <button className='rounded-4xl text-white bg-slate-400 
                   hover:bg-slate-950 w-1/2 py-2' onClick={retornar}>
               Cancelar
             </button>

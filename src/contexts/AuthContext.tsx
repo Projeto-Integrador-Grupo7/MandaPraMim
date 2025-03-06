@@ -40,6 +40,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsLoading(true)
         try {
             await login(`/usuarios/logar`, usuarioLogin, setUsuario)
+
+            // Simulação: Definir "admin" para um usuário específico
+            const tipoUsuario = usuarioLogin.usuario === "admin@admin.com" ? "Admin" : "cliente";
+                
+            // Armazenamos no LocalStorage
+            localStorage.setItem("tipoUsuario", tipoUsuario);
+
             ToastAlerta("Usuário foi autenticado com sucesso!", "sucesso")
         } catch (error) {
             ToastAlerta("Os dados do Usuário estão inconsistentes!", "erro")

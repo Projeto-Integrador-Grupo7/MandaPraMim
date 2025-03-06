@@ -38,72 +38,77 @@ function Perfil() {
 
     return (    
 
-        <div className='grid grid-cols-2 bg-yellow-400 w-full'>
+        <div className="flex justify-center items-center min-h-screen bg-[#f5c840ff] px-6">
+        <div className="flex flex-col md:flex-row bg-[#f5c840ff] w-full max-w-5xl p-8 gap-10">
+          {/* Formulário */}
+          <div className="w-full md:w-1/2">
+            <h1 className="text-5xl text-center font-bold mb-6">Dados</h1>
+            <form onSubmit={handleSubmit}  className="flex flex-col gap-4 text-xl">
+              
+              <div className="flex flex-col">
+                <label className="font-semibold">Nome</label>
+                <input
+                  type="text"
+                  name="nome"
+                  placeholder="seu nome"
+                  value={userData.nome} 
+                  onChange={handleChange} 
+                  className="border p-3 rounded-md bg-white"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-semibold">E-mail</label>
+                <input
+                  type="email"
+                  name="usuario"
+                  placeholder="usuário/email"
+                  value={userData.usuario}
+                  onChange={handleChange}
+                  className="border p-3 rounded-md bg-white"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-semibold">Senha*</label>
+                <input
+                  type="password"
+                  name="senha"
+                  placeholder="Digite sua senha"
+                  value={userData.senha}
+                  onChange={handleChange}
+                  className="border p-3 rounded-md bg-white"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-semibold">Foto</label>
+                <input
+                  type="text"
+                  name="foto"
+                  placeholder="URL da foto"
+                  value={userData.foto}
+                  onChange={handleChange}
+                  className="border p-3 rounded-md bg-white"
+                />
+              </div>
+              <button  type="submit" 
+              className=" text-white p-3 rounded-md bg-[#ea5804] hover:bg-black  ">
+                Alterar dados
+              </button>
+            </form>
+          </div>
   
-            <div className="font-semibold text-2xl">
-                <h1 className='justify-center text-black py-20 text-6xl'  >
-                    Dados
-                </h1>
-                <form onSubmit={handleSubmit} className="justify-center items-center w-2/3 px-4 py-8 bg-white rounded-xl shadow-neutral-500 ">
-                  
-                    <div className="mb-4">
-                        <label className="block text-lg">Nome:</label>
-                        <input 
-                            type="text" 
-                            name="nome" 
-                            value={userData.nome} 
-                            onChange={handleChange} 
-                            className="w-full px-4 py-2 border rounded-md" 
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-lg">Email:</label>
-                        <input 
-                            type="email" 
-                            name="usuario" 
-                            value={userData.usuario} 
-                            onChange={handleChange} 
-                            className="w-full px-4 py-2 border rounded-md" 
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-lg">Senha:</label>
-                        <input 
-                            type="password" 
-                            name="senha" 
-                            value={userData.senha} 
-                            onChange={handleChange} 
-                            className="w-full px-4 py-2 border rounded-md" 
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-lg">Foto (URL):</label>
-                        <input 
-                            type="text" 
-                            name="foto" 
-                            value={userData.foto} 
-                            onChange={handleChange} 
-                            className="w-full px-4 py-2 border rounded-md" 
-                        />
-                    </div>
-                    <button 
-                        type="submit" 
-                        className="px-6 py-2 bg-gray-600 text-white rounded-4xl hover:bg-black "
-                    >
-                        Atualizar
-                    </button>
-                </form>
-            </div>
-
-            <div className='my-auto'>
-            <img 
-                className='rounded-full w-56 relative mx-0' 
-                src={usuario.foto} 
-                alt={`Foto de perfil`} />
-            <h1 className='font-semibold text-2xl py-2 justify-center' >{usuario.nome}</h1>
-            <h2 className='font-semibold text-xl' >{usuario.usuario}</h2>
-            </div>
+          {/* Foto de perfil */}
+          <div className="w-full md:w-1/2 flex flex-col items-center">
+            <img
+              src={usuario.foto}
+              alt="Perfil"
+              className="w-50 h-58 rounded-full object-cover border-4 border-white"
+            />
+           <h1 className='font-semibold text-2xl py-2 justify-center' >{usuario.nome}</h1>
+           <h2 className='font-semibold text-xl' >{usuario.usuario}</h2>
+          </div>
         </div>
+      </div>
+
     )
 }
 
