@@ -1,13 +1,24 @@
 import Categoria from "../../../models/Categoria"
+import { useNavigate } from "react-router-dom";
 
 interface CardCategoriasProps {
   categoria: Categoria
 }
 
 function CardCategorias({ categoria }: CardCategoriasProps) {
+  const navigate = useNavigate();
+
+  // Função para navegar para a loja com o ID da categoria
+  const navegarParaLoja = () => {
+    navigate(`/loja?categoria=${categoria.id}`);
+  };
+
   return (
     <>
-      <div className="relative max-w-sm rounded-lg overflow-hidden shadow-lg">
+      <div
+        className="relative max-w-sm rounded-lg overflow-hidden shadow-lg cursor-pointer"
+        onClick={navegarParaLoja}
+      >
         <img
           className="w-full h-full object-cover opacity-400"
           src={categoria.foto}
@@ -16,7 +27,7 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
 
         <div className="absolute inset-0 bg-black opacity-40"></div>
 
-        <div className="absolute inset-0 flex items-end justify-center pb-3">
+        <div className="absolute inset-0 flex items-end justify-center pb-3 hover:bg-gray-50 hover:opacity-25 transition duration-500">
           <h2 className="text-white text-xl font-bold">
             {categoria.nome}
           </h2>

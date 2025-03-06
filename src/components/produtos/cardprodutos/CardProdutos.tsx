@@ -11,6 +11,8 @@ interface CardProdutosProps {
 
 function CardProdutos({ item }: CardProdutosProps) {
     const { adicionarProduto } = useContext(Context);
+    const precoEmReais = item.preco; // Este é o valor decimal
+    const precoFormatado = precoEmReais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     return (
         <motion.div
@@ -31,7 +33,7 @@ function CardProdutos({ item }: CardProdutosProps) {
             <h2 className="text-black text-2xl font-bold h-16 line-clamp-2">
                 {item.nome}
             </h2>
-            <p className="text-black text-md font-semibold mb-4">R${item.preco.toFixed(2)}</p>
+            <p className="text-black text-md font-semibold mb-4">{item.preco > 0 ? precoFormatado : 'Grátis'}</p>
 
             <motion.button
                 className="text-white font-bold py-2 px-4 rounded-full bg-[#E65100] border-2 border-black hover:bg-orange-400 transition-colors flex items-center justify-center mx-auto"

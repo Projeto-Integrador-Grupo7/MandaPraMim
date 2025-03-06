@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import CardCategoriasLoja from "../cardcategorias/CardCategoriasLoja";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
@@ -11,9 +11,15 @@ function ListaCategoriasLoja({ setCategoriaAtiva, categoriaAtiva }) {
   const navigate = useNavigate();
   const [categorias, setCategorias] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchParams] = useSearchParams();
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
+
+  const selecionarCategoria = (id) => {
+    setCategoriaAtiva(id);
+    navigate(`/loja?categoria=${id}`, { replace: true });
+  };
 
   async function buscarCategorias() {
     setIsLoading(true);

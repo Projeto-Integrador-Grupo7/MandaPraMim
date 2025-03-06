@@ -6,10 +6,14 @@ import Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import { motion } from "framer-motion";
 
-function ListaProdutos({ categoriaId }) {
+interface ListaProdutosProps {
+    categoriaId: number;
+}
+
+function ListaProdutos({ categoriaId }: ListaProdutosProps) {
     const navigate = useNavigate();
-    const [produtos, setProdutos] = useState([]);
-    const [produtosFiltrados, setProdutosFiltrados] = useState([]);
+    const [produtos, setProdutos] = useState<Produto[]>([]);
+    const [produtosFiltrados, setProdutosFiltrados] = useState<Produto[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [count, setCount] = useState(0);
 
@@ -46,9 +50,9 @@ function ListaProdutos({ categoriaId }) {
         if (categoriaId === 0) {
             setProdutosFiltrados(produtos);
         } else {
-            setProdutosFiltrados(produtos.filter(produto => produto.categoria.id === categoriaId));
+            setProdutosFiltrados(produtos.filter(produto => produto.categoria && produto.categoria.id === categoriaId));
         }
-        setCount(categoriaId === 0 ? produtos.length : produtos.filter(produto => produto.categoria.id === categoriaId).length);
+        setCount(categoriaId === 0 ? produtos.length : produtos.filter(produto => produto.categoria && produto.categoria.id === categoriaId).length);
     }, [categoriaId, produtos]);
 
     const container = {
