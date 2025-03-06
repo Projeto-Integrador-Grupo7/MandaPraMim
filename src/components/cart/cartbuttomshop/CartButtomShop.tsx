@@ -11,10 +11,10 @@ export default function ButtonShop() {
         <>
             {/* Ícone da sacola */}
             <button
-                className="mt-4 hover:bg-gray-400 text-white px-6 py-2 rounded-lg flex items-center relative"
+                className="mt-4 text-white hover:text-black px-6 py-2 rounded-lg flex items-center relative"
                 onClick={() => setIsCartOpen(true)} // Abre o modal do carrinho
             >
-                <ShoppingBag className="mx-2 w-12 h-12" />
+                <ShoppingBag className="mx-2 w-12 h-12 hover:text-black" />
                 Sacola
                 {/* Exibe o número de itens no carrinho */}
                 {items.length > 0 && (

@@ -29,7 +29,7 @@ function Login() {
       // Define um temporizador para ocultar a imagem após 3 segundos (3000 milissegundos)
       const timer = setTimeout(() => {
           setShowImage(false);
-      }, 2500);
+      }, 1200);
 
       // Limpa o temporizador quando o componente é desmontado
       return () => clearTimeout(timer);

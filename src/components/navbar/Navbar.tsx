@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import {  useContext, ReactNode } from "react";
+import { useContext, ReactNode } from "react";
 import logo from "../../assets/img/homeimg/logo.png";
 import ButtonShop from "../cart/cartbuttomshop/CartButtomShop";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -7,7 +7,7 @@ import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
 
-    
+
     const navigate = useNavigate();
 
     const { usuario, handleLogout } = useContext(AuthContext);
@@ -30,7 +30,7 @@ function Navbar() {
 
         component = (
            
-            <nav className="w-full bg-[#E65100] min-h-[60px] py-4 flex items-center justify-between px-10">
+            <nav className="w-full bg-[#E65100] min-h-[60px] py-2 flex items-center justify-between px-10">
             {/* Logo + Menu de navegação */}
             <div className="flex items-center gap-6">
                 <Link to="/home">
@@ -55,7 +55,7 @@ function Navbar() {
             </div>
 
             {/* Ícone da sacola + Botão de login */}
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-6">
                 {/* Botão do Carrinho */}
                 <div className="mt-0">
                     <ButtonShop />

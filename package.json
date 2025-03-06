@@ -12,6 +12,7 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/vite": "^4.0.9",
+    "@types/swiper": "^6.0.0",
     "axios": "^1.8.1",
     "feather-icons": "^4.29.2",
     "lucide-react": "^0.477.0",
@@ -22,7 +23,8 @@
     "react-router-dom": "^7.2.0",
     "react-sidebar": "^3.0.2",
     "react-toastify": "^11.0.5",
-    "reactjs-popup": "^2.0.6"
+    "reactjs-popup": "^2.0.6",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
