@@ -1,20 +1,20 @@
-import { FacebookLogo, InstagramLogo, TiktokLogo, XLogo } from "@phosphor-icons/react";
+import { EnvelopeSimple, GithubLogo } from "@phosphor-icons/react";
 import { AuthContext } from "../../contexts/AuthContext";
-import {  useContext, ReactNode } from "react";
+import { useContext, ReactNode } from "react";
 
 function Footer() {
-    let data = new Date().getFullYear();
+    const data = new Date().getFullYear();
 
     const { usuario } = useContext(AuthContext);
 
     let component: ReactNode
- 
 
-    
-     // Se o token for != de vazio, será apresentado o Navbar com o html/css definido
-     if (usuario.token !== "") {
- 
-         component = (
+
+
+    // Se o token for != de vazio, será apresentado o Navbar com o html/css definido
+    if (usuario.token !== "") {
+
+        component = (
             <div className="w-full bg-[#E65100] text-white py-10 flex flex-col md:flex-row items-center md:items-start justify-between px-8 md:px-20">
                 {/* Seção Centralizada */}
                 <div className="flex justify-center flex-col items-center text-center md:w-1/2 ">
@@ -23,14 +23,12 @@ function Footer() {
 
                     {/* Ícones de redes sociais */}
                     <div className="flex gap-4 mt-4">
-                        <a href="#"><FacebookLogo size={32} weight="bold" /></a>
-                        <a href="#"><InstagramLogo size={32} weight="bold" /></a>
-                        <a href="#"><TiktokLogo size={32} weight="bold" /></a>
-                        <a href="#"><XLogo size={32} weight="bold" /></a>
+                        <a href="https://github.com/Grupo777" target="_blank"><GithubLogo size={32} weight="bold" /></a>
+                        <a href="mailto:generation.g777@gmail.com" target="_blank"><EnvelopeSimple size={32} weight="bold" /></a>
                     </div>
 
                     {/* Direitos autorais */}
-                    <p className="text-sm mt-4">© {data}. All rights reserved.</p>
+                    <p className="text-sm mt-4">© Delivery Manda Pra Mim | Copyright: {data}.</p>
                 </div>
 
                 {/* Seção de Contato */}
@@ -66,18 +64,18 @@ function Footer() {
                     </form>
                 </div>
             </div>
-        
-        
 
-         )
+
+
+        )
     }
 
 
 
     return (
-       <>
-        {component}
-       </>
+        <>
+            {component}
+        </>
     );
 }
 
