@@ -5,6 +5,7 @@ import Categoria from "../../../../models/Categoria";
 import { buscar, atualizar, cadastrar } from "../../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 import Produto from "../../../../models/Produto";
+import Sidebar from "../../sidebar/Sidebar";
 
 function FormProduto() {
 
