@@ -6,6 +6,7 @@ import Categoria from "../../../../models/Categoria";
 import { AuthContext } from "../../../../contexts/AuthContext";
 import { buscar } from "../../../../services/Service";
 import { Oval } from "react-loader-spinner";
+import { ToastAlerta } from "../../../../utils/ToastAlerta";
 
 function ListaCategoriasAdmin() {
 
@@ -30,7 +31,7 @@ function ListaCategoriasAdmin() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado!')
+      ToastAlerta('Você precisa estar logado!', 'alerta')
       navigate('/')
     }
   }, [token])

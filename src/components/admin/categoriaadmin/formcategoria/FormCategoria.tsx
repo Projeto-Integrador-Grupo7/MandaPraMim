@@ -5,6 +5,7 @@ import { AuthContext } from "../../../../contexts/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { atualizar, buscar, cadastrar } from "../../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerta } from "../../../../utils/ToastAlerta";
 
 function FormCategoria() {
 
@@ -32,7 +33,7 @@ function FormCategoria() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado!')
+      ToastAlerta('Você precisa estar logado!', 'alerta')
       navigate('/')
     }
   }, [token])
@@ -65,13 +66,13 @@ function FormCategoria() {
         await atualizar(`/categorias`, categoria, setCategoria, {
           headers: { 'Authorization': token }
         })
-        alert('A Categoria foi atualizado com sucesso!')
+        ToastAlerta('A Categoria foi atualizado com sucesso!', 'sucesso')
       } catch (error: any) {
         console.error("Erro ao atualizar a categoria:", error);
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao atualizar a categoria.')
+          ToastAlerta('Erro ao atualizar a categoria.', 'erro')
         }
 
       }
@@ -80,14 +81,14 @@ function FormCategoria() {
         await cadastrar(`/categorias`, categoria, setCategoria, {
           headers: { 'Authorization': token }
         })
-        alert('A Categoria foi cadastrado com sucesso!')
+        ToastAlerta('A Categoria foi cadastrado com sucesso!','sucesso')
       } catch (error: any) {
         console.error("Erro ao cadastrar a categoria:", error);
         console.error("Detalhes do erro:", error.response?.data);
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao cadastrar a Categoria.')
+          ToastAlerta('Erro ao cadastrar a Categoria.','erro')
         }
 
       }
