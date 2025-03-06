@@ -2,10 +2,10 @@ import { Link, useNavigate } from "react-router-dom";
 import CardCategoriasAdmin from "../cardcategoriasadmin/CardCategoriasAdmin"
 import Sidebar from "../../sidebar/Sidebar"
 import { useContext, useEffect, useState } from "react";
-import Categoria from "../../../models/Categoria";
-import { AuthContext } from "../../../../contexts/authContext";
+import Categoria from "../../../../models/Categoria";
+import { AuthContext } from "../../../../contexts/AuthContext";
 import { buscar } from "../../../../services/Service";
-import { DNA } from "react-loader-spinner";
+import { Oval } from "react-loader-spinner";
 
 function ListaCategoriasAdmin() {
 
@@ -52,13 +52,14 @@ function ListaCategoriasAdmin() {
             </button>
           </Link>
           {categorias.length === 0 && (
-            <DNA
+            <Oval
               visible={true}
-              height="200"
-              width="200"
-              ariaLabel="dna-loading"
+              height="80"
+              width="80"
+              color="#008361"
+              ariaLabel="oval-loading"
               wrapperStyle={{}}
-              wrapperClass="dna-wrapper mx-auto"
+              wrapperClass="flex justify-center items-center min-h-screen"
             />
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">

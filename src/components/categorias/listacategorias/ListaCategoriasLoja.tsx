@@ -33,7 +33,7 @@ function ListaCategoriasLoja() {
 
   return (
     <>
-      <div className="bg-yellow-400 p-8">
+      <div className="bg-[#f5c840ff] p-8">
         <h2 className="text-4xl font-bold text-center mb-6">Categorias</h2>
         <div className="flex justify-center space-x-8">
           {categorias.length === 0 && (
