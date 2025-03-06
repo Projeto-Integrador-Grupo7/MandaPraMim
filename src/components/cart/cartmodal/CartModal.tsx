@@ -20,7 +20,7 @@ export default function CartModal({ isOpen, onClose, cart, removeFromCart }: Car
         >
             <div className="p-6">
                 <header className="flex justify-between items-center">
-                    <h2 className="text-xl font-bold">Carrinho de Compras</h2>
+                    <h2 className="text-xl font-bold">Sacola de Compras</h2>
                     <button onClick={onClose} className="text-gray-500 text-xl">&times;</button>
                 </header>
 
