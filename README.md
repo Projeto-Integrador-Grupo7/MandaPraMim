@@ -91,6 +91,6 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICEN
 - [Eloiza Fernandes] (https://github.com/eloizafns)
 - [Felipe Macedo] (https://github.com/FehMacedo10)
 - [Jaime Filho] (https://github.com/jaimebranco)
-- [Nathan Ribeiro](https://github.com/Shost01)
-- [Paola Patrícia](https://github.com/PaolaPatricia16)
+- [Nathan Ribeiro] (https://github.com/Shost01)
+- [Paola Patrícia] (https://github.com/PaolaPatricia16)
 
