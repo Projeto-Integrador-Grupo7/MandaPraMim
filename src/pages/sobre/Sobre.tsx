@@ -151,7 +151,7 @@ function Sobre() {
                 className="rounded-full w-20 h-20 object-cover"
               />
               <div>
-                <h4 className="font-semibold">Product Owner</h4>
+                <h4 className="font-semibold">Desenvolvedor</h4>
                 <p className="text-gray-600">Jaime Filho</p>
                 <div className="flex gap-4 mt-4 justify-center">
                     <a href="https://www.linkedin.com/in/jaime-filho-2b8ab8217/" target="_blank"><LinkedinLogo size={32} weight="bold" /></a>  
@@ -167,7 +167,7 @@ function Sobre() {
                 className="rounded-full w-20 h-20 object-cover"
               />
               <div>
-                <h4 className="font-semibold">Scrum Master</h4>
+                <h4 className="font-semibold">Desenvolvedor</h4>
                 <p className="text-gray-600">Nathan Ribeiro</p>
                 <div className="flex gap-4 mt-4 justify-center">
                     <a href="https://www.linkedin.com/in/dev-nathan-ribeiro/" target="_blank"><LinkedinLogo size={32} weight="bold" /></a>  
