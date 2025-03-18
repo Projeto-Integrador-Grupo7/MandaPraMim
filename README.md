@@ -1,54 +1,96 @@
-# React + TypeScript + Vite
+# MandaPraMim
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg)
 
-Currently, two official plugins are available:
+## Índice
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Descrição do Projeto](#descri%C3%A7%C3%A3o-do-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como Executar o Projeto](#como-executar-o-projeto)
+- [Contribuindo](#contribuindo)
+- [Licença](#licen%C3%A7a)
+- [Autores](#autores)
 
-## Expanding the ESLint configuration
+## Descrição do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O MandaPraMim é uma aplicação desenvolvida para [descreva aqui o propósito do projeto, por exemplo: facilitar a comunicação entre clientes e fornecedores]. Este projeto foi criado como parte do Projeto Integrador do Grupo 7.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Funcionalidades
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- [Funcionalidade 1: descrição]
+- [Funcionalidade 2: descrição]
+- [Funcionalidade 3: descrição]
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Tecnologias Utilizadas
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Outras tecnologias ou bibliotecas relevantes]
+
+## Como Executar o Projeto
+
+Para rodar o projeto localmente, siga os passos abaixo:
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/Projeto-Integrador-Grupo7/MandaPraMim.git
+   ```
+
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd MandaPraMim
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   yarn install
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   yarn dev
+   ```
+
+O aplicativo estará disponível em `http://localhost:3000`.
+
+## Contribuindo
+
+Contribuições são bem-vindas! Se você deseja contribuir com o projeto, siga os passos abaixo:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature:
+
+   ```bash
+   git checkout -b minha-feature
+   ```
+
+3. Commit suas alterações:
+
+   ```bash
+   git commit -m 'Adiciona minha feature'
+   ```
+
+4. Envie para o repositório remoto:
+
+   ```bash
+   git push origin minha-feature
+   ```
+
+5. Abra um Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Autores
+
+- [Nome do Autor 1](https://github.com/autor1)
+- [Nome do Autor 2](https://github.com/autor2)
+- [Nome do Autor 3](https://github.com/autor3)
+
