@@ -45,7 +45,7 @@ function ListaProdutosAdmin() {
 
     return (
         <>
-            <div className="flex h-screen overflow-hidden">
+            <div className="flex flex-col lg:flex-row min-h-screen bg-gray-50">
                 < Sidebar />
                 <div className="container mx-auto px-4 py-6 flex-1 p-6 overflow-y-auto">
                     <h1 className="text-4xl font-bold mb-6 ml-4">Produtos</h1>

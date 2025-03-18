@@ -38,7 +38,7 @@ function ListaCategoriasAdmin() {
   }, [categorias.length]);
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex flex-col lg:flex-row min-h-screen">
       <Sidebar />
 
       <main className="flex-1 p-4 lg:p-8">
@@ -65,7 +65,7 @@ function ListaCategoriasAdmin() {
               />
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 ml-6 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {categorias.map((categoria) => (
                 <CardCategoriasAdmin
                   key={categoria.id}
