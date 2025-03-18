@@ -88,7 +88,9 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICEN
 
 ## Autores
 
-- [Nome do Autor 1](https://github.com/autor1)
-- [Nome do Autor 2](https://github.com/autor2)
-- [Nome do Autor 3](https://github.com/autor3)
+- [Eloiza Fernandes] (https://github.com/eloizafns)
+- [Felipe Macedo] (https://github.com/FehMacedo10)
+- [Jaime Filho] (https://github.com/jaimebranco)
+- [Nathan Ribeiro](https://github.com/Shost01)
+- [Paola Patrícia](https://github.com/PaolaPatricia16)
 
