@@ -1,7 +1,5 @@
 # MandaPraMim
 
-![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg)
-
 ## Índice
 
 - [Descrição do Projeto](#descri%C3%A7%C3%A3o-do-projeto)
