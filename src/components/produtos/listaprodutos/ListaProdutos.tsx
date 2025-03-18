@@ -74,7 +74,20 @@ function ListaProdutos({ categoriaId }: ListaProdutosProps) {
     return (
         <>
             <div className="flex justify-between items-center mx-8 my-4">
+<<<<<<< HEAD
                 <p className="text-black font-medium mx-8">{count} produtos</p>
+=======
+                <p className="text-black font-medium">{count} produtos</p>
+                {/* <div className="flex items-center">
+                    <span className="mr-2">Ordenar por:</span>
+                    <select className="bg-transparent border border-black rounded-md px-2 py-1">
+                        <option>Default</option>
+                        <option>Preço: Menor para Maior</option>
+                        <option>Preço: Maior para Menor</option>
+                        <option>Nome: A-Z</option>
+                    </select>
+                </div> */}
+>>>>>>> 6c953654cda3297e65f2f16d309e496eb60f3c1c
             </div>
 
             {isLoading ? (
