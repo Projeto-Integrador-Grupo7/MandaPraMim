@@ -12,7 +12,7 @@
 
 ## Descrição do Projeto
 
-O MandaPraMim é uma aplicação desenvolvida para [descreva aqui o propósito do projeto, por exemplo: facilitar a comunicação entre clientes e fornecedores]. Este projeto foi criado como parte do Projeto Integrador do Grupo 7.
+O MandaPraMim é uma aplicação web desenvolvida com o objetivo de proporcionar mais praticidade na escolha e na realização de pedidos de comida via web. Além disso, recomendar alimentos saudáveis para os usuários. O sistema também conta com a autenticação do usuário para garantir a segurança dos dados. Este projeto foi criado como parte do Projeto Integrador do Grupo 7 durante a realização do Bootcamp Java FullStack na Generation Brasil.
 
 ## Funcionalidades
 
@@ -22,10 +22,28 @@ O MandaPraMim é uma aplicação desenvolvida para [descreva aqui o propósito d
 
 ## Tecnologias Utilizadas
 
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
-- [Outras tecnologias ou bibliotecas relevantes]
+FRONT-END
+-**Type Script**: Superset do JavaScript para gerar tipagem estática garantindo maior segurança e melhor desenvolvimento.
+-**React**: Biblioteca JavaScript usado para a construção de interfaces de usuário dinâmicas e reativas.
+-**Html 5**: Linguagem de marcação utilizada para estruturar o conteúdo da aplicação web.
+-**CSS 3**: Linguagem de estilo utilizada para definir a apresentação visual da aplicação.
+-**TailwindCss**: Framework CSS utilitário usado estilizar elementos rapidamente através da composição de classes.
+-**Netlify**: Plataforma para deploy e hospedagem do frontend da aplicação, oferecendo facilidade e escalabilidade.
+
+BACK-END
+  
+- **Java 17**: Linguagem de programação utilizada para o desenvolvimento da API.
+- **Spring Boot**: Framework que simplifica o desenvolvimento de aplicações Java, fornecendo uma configuração automática e uma estrutura robusta.
+- **Spring Data JPA**: Para a interação com o banco de dados, facilitando a persistência de dados.
+- **Spring Security**: Para a implementação de autenticação e autorização.
+- **H2 Database**: Banco de dados em memória utilizado para testes.
+- **MySQL**: Banco de dados relacional utilizado para a persistência de dados em produção.
+- **JUnit**: Framework de testes utilizado para garantir a qualidade do código.
+- **Swagger (Springdoc OpenAPI)**: Para a documentação da API, permitindo que os desenvolvedores visualizem e testem os endpoints de forma interativa.
+- **Insomnia**: Ferramenta utilizada para realizar requisições aos endpoints da API durante o desenvolvimento e testes.
+- **Render**: Plataforma utilizada para o deploy da API, tornando-a acessível publicamente.
+
+
 
 ## Como Executar o Projeto
 
