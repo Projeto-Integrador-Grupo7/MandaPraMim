@@ -16,9 +16,7 @@ O MandaPraMim é uma aplicação web desenvolvida com o objetivo de proporcionar
 
 ## Funcionalidades
 
-- [Funcionalidade 1: descrição]
-- [Funcionalidade 2: descrição]
-- [Funcionalidade 3: descrição]
+Dentro da aplicação dividimos os acessos em cliente e administrador, sendo o cliente nosso usuário final que usará a plataforma para realizar seu cadastro e realizar compras por meio da função de carrinho e posteriomente sacola. Já o modo administrador tem acesso aos produtos que estão sendo vendidos, onde ele consegue adicionar, apagar e atualizar novos produtos em tempo real. Além disso o sistema faz recomendações de produtos saudáveis. Todos os acessos na plataforma são feitos por meio de login, tornando a aplicação muito segura.
 
 ## Tecnologias Utilizadas
 
