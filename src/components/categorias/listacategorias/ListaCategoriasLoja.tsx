@@ -18,6 +18,7 @@ function ListaCategoriasLoja({ setCategoriaAtiva, categoriaAtiva }) {
 
   const selecionarCategoria = (id) => {
     setCategoriaAtiva(id);
+
     navigate(`/loja?categoria=${id}`, { replace: true });
   };
 

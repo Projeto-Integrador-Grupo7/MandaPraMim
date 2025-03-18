@@ -73,9 +73,9 @@ function ListaProdutos({ categoriaId }: ListaProdutosProps) {
 
     return (
         <>
-            {/* <div className="flex justify-between items-center mx-8 my-4">
+            <div className="flex justify-between items-center mx-8 my-4">
                 <p className="text-black font-medium">{count} produtos</p>
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                     <span className="mr-2">Ordenar por:</span>
                     <select className="bg-transparent border border-black rounded-md px-2 py-1">
                         <option>Default</option>
@@ -83,8 +83,8 @@ function ListaProdutos({ categoriaId }: ListaProdutosProps) {
                         <option>Preço: Maior para Menor</option>
                         <option>Nome: A-Z</option>
                     </select>
-                </div>
-            </div> */}
+                </div> */}
+            </div>
 
             {isLoading ? (
                 <div className="flex flex-col items-center justify-center min-h-[400px]">
