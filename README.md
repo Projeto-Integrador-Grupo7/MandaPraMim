@@ -23,12 +23,12 @@ O MandaPraMim é uma aplicação web desenvolvida com o objetivo de proporcionar
 ## Tecnologias Utilizadas
 
 FRONT-END
--**Type Script**: Superset do JavaScript para gerar tipagem estática garantindo maior segurança e melhor desenvolvimento.
--**React**: Biblioteca JavaScript usado para a construção de interfaces de usuário dinâmicas e reativas.
--**Html 5**: Linguagem de marcação utilizada para estruturar o conteúdo da aplicação web.
--**CSS 3**: Linguagem de estilo utilizada para definir a apresentação visual da aplicação.
--**TailwindCss**: Framework CSS utilitário usado estilizar elementos rapidamente através da composição de classes.
--**Netlify**: Plataforma para deploy e hospedagem do frontend da aplicação, oferecendo facilidade e escalabilidade.
+- **Type Script**: Superset do JavaScript para gerar tipagem estática garantindo maior segurança e melhor desenvolvimento.
+- **React**: Biblioteca JavaScript usado para a construção de interfaces de usuário dinâmicas e reativas.
+- **Html 5**: Linguagem de marcação utilizada para estruturar o conteúdo da aplicação web.
+- **CSS 3**: Linguagem de estilo utilizada para definir a apresentação visual da aplicação.
+- **TailwindCss**: Framework CSS utilitário usado estilizar elementos rapidamente através da composição de classes.
+- **Netlify**: Plataforma para deploy e hospedagem do frontend da aplicação, oferecendo facilidade e escalabilidade.
 
 BACK-END
   
