@@ -44,8 +44,8 @@ function ListaCategoriasLoja({ setCategoriaAtiva, categoriaAtiva }) {
   const todasCategorias = [{ id: 0, nome: "Todos", descricao: "Todas as categorias", foto: LogoMandaPraMim }, ...categorias];
 
   return (
-    <div className="bg-[#f5c840ff] p-8">
-      <h2 className="text-4xl font-bold text-center mb-6">Categorias</h2>
+    <div className="bg-[#f5c840ff] p-4 md:p-8">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Categorias</h2>
 
       {isLoading ? (
         <div className="flex justify-center">
@@ -65,7 +65,7 @@ function ListaCategoriasLoja({ setCategoriaAtiva, categoriaAtiva }) {
         </div>
       ) : (
         <motion.div
-          className="flex justify-center space-x-8 overflow-x-auto pb-4"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -75,7 +75,8 @@ function ListaCategoriasLoja({ setCategoriaAtiva, categoriaAtiva }) {
               key={categoria.id}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setCategoriaAtiva(categoria.id)}
+              onClick={() => selecionarCategoria(categoria.id)}
+              className="flex justify-center"
             >
               <CardCategoriasLoja
                 categoria={categoria}

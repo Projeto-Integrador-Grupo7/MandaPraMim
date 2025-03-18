@@ -42,7 +42,7 @@ function Home() {
             </div>
 
             {/* Categorias */}
-            <div className="w-full px-4 sm:px-6 lg:px-8 py-8">
+            <div className="w-full">
                 <ListaCategorias />
             </div>
 
