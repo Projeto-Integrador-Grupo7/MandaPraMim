@@ -57,7 +57,7 @@ function Perfil() {
                 />
               </div>
               <div className="flex flex-col">
-                <label className="font-semibold">E-mail</label>
+                <label className="font-semibold">Usuário</label>
                 <input
                   type="email"
                   name="usuario"

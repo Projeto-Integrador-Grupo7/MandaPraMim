@@ -31,10 +31,10 @@ function Login() {
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#f5c840ff] h-screen items-center font-bold">
-            <div className='flex flex-col items-center justify-center w-full px-4 md:px-8 lg:px-0'>
+        <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#f5c840ff] h-screen items-center font-bold px-25">
+            <div className='flex flex-col items-center justify-center w-full mx-auto'>
                 <div className='w-full max-w-md'>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl py-4 md:py-6 text-center">Seja Bem-Vindo</h1>
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl py-4 md:py-6 text-center my-6">Seja Bem-Vindo</h1>
                     <form className="flex flex-col w-full gap-4 md:gap-6" onSubmit={login}>
                         <div className="flex flex-col w-full text-base md:text-lg">
                             <label htmlFor="usuario" className="mb-1">E-mail</label>

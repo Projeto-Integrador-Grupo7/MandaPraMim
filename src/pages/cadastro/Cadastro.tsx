@@ -80,13 +80,13 @@ function Cadastro() {
           <h2 className=' text-6xl'>Cadastro</h2>
 
           <div className="flex flex-col w-full ">
-            <label htmlFor="nome">Nome</label>
+            <label htmlFor="nome">Nome*</label>
             <input
               type="text"
               id="nome"
               name="nome"
               // placeholder = é o texto que aparece na caixa antes do usuário digitar
-              placeholder="Nome"
+              placeholder="Digite seu nome"
               className="rounded-3xl bg-white p-2 h-13"
               value={usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -95,12 +95,12 @@ function Cadastro() {
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuario</label>
+            <label htmlFor="usuario">Usuário*</label>
             <input
               type="text"
               id="usuario"
               name="usuario"
-              placeholder="Usuario"
+              placeholder="Digite seu e-mail"
               className="rounded-3xl bg-white p-2 h-13"
               value={usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -113,7 +113,7 @@ function Cadastro() {
               type="text"
               id="foto"
               name="foto"
-              placeholder="Foto"
+              placeholder="Link da foto"
               className="rounded-3xl bg-white p-2 h-13"
               value={usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -121,12 +121,12 @@ function Cadastro() {
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
+            <label htmlFor="senha">Senha*</label>
             <input
               type="password"
               id="senha"
               name="senha"
-              placeholder="Senha"
+              placeholder="Digite sua senha (mínimo 8 caracteres)"
               className="rounded-3xl bg-white p-2 h-13"
               value={usuario.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -134,12 +134,12 @@ function Cadastro() {
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="confirmarSenha">Confirmar Senha</label>
+            <label htmlFor="confirmarSenha">Confirmar Senha*</label>
             <input
               type="password"
               id="confirmarSenha"
               name="confirmarSenha"
-              placeholder="Confirmar Senha"
+              placeholder="Confirme a sua senha"
               className="rounded-3xl bg-white p-2 h-13"
               value={confirmaSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
