@@ -10,11 +10,11 @@ function Cadastro() {
 
   // função de navegação da pag
   const navigate = useNavigate()
-  
+
   //variavel de estdao
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const[confirmaSenha, setConfirmaSenha] = useState<string>("")
+  const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
@@ -25,16 +25,16 @@ function Cadastro() {
   })
 
   useEffect(() => {
-    if (usuario.id !== 0){
+    if (usuario.id !== 0) {
       retornar()
     }
   }, [usuario])
 
-  function retornar(){
+  function retornar() {
     navigate('/login')
   }
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value
@@ -42,55 +42,55 @@ function Cadastro() {
 
   }
 
-  function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>){
+  function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
     setConfirmaSenha(e.target.value)
   }
 
-  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
+  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
-    if(confirmaSenha === usuario.senha && usuario.senha.length >= 8){
+    if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
 
       setIsLoading(true)
 
-      try{
+      try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
         ToastAlerta("Usuário foi cadastrado com sucesso!", "sucesso")
-      }catch(error){
+      } catch (error) {
         ToastAlerta("Erro ao cadastrar o usuário!", "erro")
       }
-    }else{ 
+    } else {
       if (confirmaSenha != usuario.senha && usuario.senha.length < 8) {
         ToastAlerta("Dados do usuário ou senha inconsistentes! Verifique as informações do cadastro.", "erro")
-        setUsuario({...usuario, senha: ''})
+        setUsuario({ ...usuario, senha: '' })
         setConfirmaSenha('')
       }
-    } 
+    }
 
     setIsLoading(false)
   }
 
   return (
     <>
-    {/* place-... = justifica e alinha os elementos em um container */}
+      {/* place-... = justifica e alinha os elementos em um container */}
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen 
             place-items-center font-bold bg-[#f5c840ff]">
 
         <form className='flex justify-center items-center flex-col w-2/3 gap-3 text-black text-xl' onSubmit={cadastrarNovoUsuario} >
           <h2 className=' text-6xl'>Cadastro</h2>
-          
+
           <div className="flex flex-col w-full ">
             <label htmlFor="nome">Nome</label>
             <input
               type="text"
               id="nome"
               name="nome"
-            // placeholder = é o texto que aparece na caixa antes do usuário digitar
-              placeholder="Nome" 
+              // placeholder = é o texto que aparece na caixa antes do usuário digitar
+              placeholder="Nome"
               className="rounded-3xl bg-white p-2 h-13"
-              value = {usuario.nome}
+              value={usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-             
+
             />
           </div>
 
@@ -102,7 +102,7 @@ function Cadastro() {
               name="usuario"
               placeholder="Usuario"
               className="rounded-3xl bg-white p-2 h-13"
-              value = {usuario.usuario}
+              value={usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
@@ -115,7 +115,7 @@ function Cadastro() {
               name="foto"
               placeholder="Foto"
               className="rounded-3xl bg-white p-2 h-13"
-              value = {usuario.foto}
+              value={usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
@@ -128,7 +128,7 @@ function Cadastro() {
               name="senha"
               placeholder="Senha"
               className="rounded-3xl bg-white p-2 h-13"
-              value = {usuario.senha}
+              value={usuario.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
@@ -153,20 +153,20 @@ function Cadastro() {
               Cancelar
             </button>
 
-            <button 
-                type='submit'
-                className='rounded-4xl bg-[#ea5804] hover:bg-black text-white w-1/2 py-2
-                           flex justify-center' 
+            <button
+              type='submit'
+              className='rounded-4xl bg-[#ea5804] hover:bg-black text-white w-1/2 py-2
+                           flex justify-center'
             >
-                {isLoading ? <RotatingLines
-                    strokeColor="white"
-                    strokeWidth="5"
-                    animationDuration="0.75"
-                    width="24"
-                    visible={true}
-                /> :
-                  <span>Cadastrar</span>
-                }
+              {isLoading ? <RotatingLines
+                strokeColor="white"
+                strokeWidth="5"
+                animationDuration="0.75"
+                width="24"
+                visible={true}
+              /> :
+                <span>Cadastrar</span>
+              }
             </button>
           </div>
         </form>
